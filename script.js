@@ -27,6 +27,73 @@ if (emailLink){
   });
 }
 
+/* ===================== CONTACT FORM ===================== */
+/* Paste your Cloudflare Worker URL here once deployed, e.g.:
+   'https://portfolio-contact.YOURNAME.workers.dev'
+   (see cloudflare-worker/worker.js for the deploy steps). */
+const CONTACT_ENDPOINT = '/api/contact';
+
+const contactForm = document.getElementById('contact-form');
+if (contactForm){
+  const cfSubmit = document.getElementById('cf-submit');
+  const cfStatus = document.getElementById('cf-status');
+  const cfCompany = document.getElementById('cf-company'); /* honeypot */
+
+  const getDict = () => (typeof I18N !== 'undefined')
+    ? I18N[document.documentElement.getAttribute('lang') || 'fr']
+    : null;
+
+  const setStatus = (message, kind) => {
+    if (!cfStatus) return;
+    cfStatus.textContent = message;
+    cfStatus.classList.remove('success', 'error');
+    if (kind) cfStatus.classList.add(kind);
+    cfStatus.classList.add('show');
+  };
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const dict = getDict();
+    const f = dict && dict.contact && dict.contact.form ? dict.contact.form : {};
+
+    /* silent bot trap: if the honeypot field got filled, pretend success and stop */
+    if (cfCompany && cfCompany.value){
+      setStatus(f.success || 'Message envoyé !', 'success');
+      contactForm.reset();
+      return;
+    }
+
+    const name = document.getElementById('cf-name').value.trim();
+    const email = document.getElementById('cf-email').value.trim();
+    const message = document.getElementById('cf-message').value.trim();
+
+    if (!name || !email || !message){
+      setStatus(f.missing || 'Merci de remplir tous les champs.', 'error');
+      return;
+    }
+
+    cfSubmit.classList.add('loading');
+    cfSubmit.disabled = true;
+    setStatus(f.sending || 'Envoi en cours…', null);
+
+    try {
+      const res = await fetch(CONTACT_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, message })
+      });
+      if (!res.ok) throw new Error('request failed');
+      setStatus(f.success || 'Message envoyé, merci !', 'success');
+      contactForm.reset();
+    } catch (err) {
+      setStatus(f.error || "Une erreur est survenue, réessaie ou écris-moi directement par email.", 'error');
+    } finally {
+      cfSubmit.classList.remove('loading');
+      cfSubmit.disabled = false;
+    }
+  });
+}
+
 /* ===================== HERO NAME LETTER-BY-LETTER REVEAL ===================== */
 const scriptEl = document.querySelector('.hero-name .script');
 if (scriptEl){

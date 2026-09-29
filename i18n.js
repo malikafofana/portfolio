@@ -14,7 +14,7 @@ const I18N = {
       rag: "RAG (Retrieval-Augmented Generation) : une IA qui va chercher ses sources avant de répondre, pour des réponses fiables et vérifiables.",
       ocr: "OCR, reconnaissance optique de caractères : extraire et structurer automatiquement des informations à partir de documents scannés.",
       hash: "SHA-256 : une empreinte cryptographique utilisée pour sécuriser et vérifier des données sur une blockchain.",
-      tensor: "Tenseur : la structure de données qui porte toute l'information dans un réseau de neurones."
+      tensor: "ℝⁿˣᴹ : matrice des données organisées en n lignes et M colonnes."
     },
     manifesto: {
       eyebrow: "Qui je suis",
@@ -73,7 +73,18 @@ const I18N = {
       sub: "<span class=\"glow-word glow-blue\">Alternance</span> en Ingénierie IA &amp; Data, disponible dès octobre 2026<br>(3&nbsp;sem. entreprise / 1&nbsp;sem. école)",
       copyHint: "cliquer pour copier",
       copied: "Adresse copiée !",
-      open: "Au-delà de l'<span class=\"glow-word glow-blue\">alternance</span>, je reste ouverte à toute forme de <span class=\"glow-word glow-red\">collaboration</span>."
+      open: "Au-delà de l'<span class=\"glow-word glow-blue\">alternance</span>, je reste ouverte à toute forme de <span class=\"glow-word glow-red\">collaboration</span>.",
+      form: {
+        eyebrow: "Ou écris-moi directement",
+        name: "Nom et prénom",
+        email: "Email",
+        message: "Message",
+        submit: "Envoyer le message",
+        sending: "Envoi en cours…",
+        success: "Message envoyé, merci ! Je te réponds rapidement.",
+        error: "Une erreur est survenue, réessaie ou écris-moi directement par email.",
+        missing: "Merci de remplir tous les champs."
+      }
     },
     footer: { note: "Malika Fofana, IA &amp; Data Science" }
   },
@@ -92,7 +103,7 @@ const I18N = {
       rag: "RAG (Retrieval-Augmented Generation): an AI that retrieves its sources before answering, for reliable, verifiable responses.",
       ocr: "OCR, optical character recognition: automatically extracting and structuring information from scanned documents.",
       hash: "SHA-256: a cryptographic fingerprint used to secure and verify data on a blockchain.",
-      tensor: "Tensor: the data structure that carries all the information inside a neural network."
+      tensor: "ℝⁿˣᴹ: data matrix organized in n rows and M columns."
     },
     manifesto: {
       eyebrow: "Who I am",
@@ -151,7 +162,18 @@ const I18N = {
       sub: "<span class=\"glow-word glow-blue\">Work-study apprentice</span> in AI &amp; Data Engineering, available from October 2026<br>(3&nbsp;weeks company / 1&nbsp;week school)",
       copyHint: "click to copy",
       copied: "Address copied!",
-      open: "Beyond the <span class=\"glow-word glow-blue\">Work-study apprentice</span> role, I'm open to any kind of <span class=\"glow-word glow-red\">collaboration</span>."
+      open: "Beyond the <span class=\"glow-word glow-blue\">Work-study apprentice</span> role, I'm open to any kind of <span class=\"glow-word glow-red\">collaboration</span>.",
+      form: {
+        eyebrow: "Or message me directly",
+        name: "Full name",
+        email: "Email",
+        message: "Message",
+        submit: "Send message",
+        sending: "Sending…",
+        success: "Message sent, thank you! I'll get back to you soon.",
+        error: "Something went wrong, please try again or email me directly.",
+        missing: "Please fill in all fields."
+      }
     },
     footer: { note: "Malika Fofana, AI &amp; Data Science" }
   }

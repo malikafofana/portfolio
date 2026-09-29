@@ -544,6 +544,30 @@
       <a href="https://linkedin.com/in/malika-fofana" target="_blank" rel="noopener">linkedin.com/in/malika-fofana</a>
       <a href="https://github.com/malikafofana" target="_blank" rel="noopener">github.com/malikafofana</a>
     </div>
+
+    <form id="contact-form" class="contact-form reveal" novalidate>
+      <p class="form-eyebrow" data-i18n="contact.form.eyebrow">Ou écris-moi directement</p>
+      <input type="text" name="company" id="cf-company" class="form-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <div class="form-row">
+        <div class="form-field">
+          <label for="cf-name" data-i18n="contact.form.name">Nom et prénom</label>
+          <input type="text" id="cf-name" name="name" required autocomplete="name">
+        </div>
+        <div class="form-field">
+          <label for="cf-email" data-i18n="contact.form.email">Email</label>
+          <input type="email" id="cf-email" name="email" required autocomplete="email">
+        </div>
+      </div>
+      <div class="form-field">
+        <label for="cf-message" data-i18n="contact.form.message">Message</label>
+        <textarea id="cf-message" name="message" rows="5" required></textarea>
+      </div>
+      <button type="submit" class="form-submit" id="cf-submit">
+        <span class="submit-label" data-i18n="contact.form.submit">Envoyer le message</span>
+        <span class="submit-spinner" aria-hidden="true"></span>
+      </button>
+      <p class="form-status" id="cf-status" role="status" aria-live="polite"></p>
+    </form>
   </div>
   <p class="footer-note" data-i18n="footer.note">Malika Fofana, IA &amp; Data Science</p>
 </footer>

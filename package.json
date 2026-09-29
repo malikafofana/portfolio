@@ -1,0 +1,7 @@
+{
+  "name": "malika-fofana-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Portfolio site with a Vercel serverless contact form (Resend)."
+}
