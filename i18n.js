@@ -86,7 +86,7 @@ const I18N = {
         missing: "Merci de remplir tous les champs."
       }
     },
-    footer: { note: "Malika Fofana, IA &amp; Data Science" }
+    footer: { note: "Malika Fofana, Ingénieure IA &amp; Data" }
   },
 
   en: {
@@ -175,7 +175,7 @@ const I18N = {
         missing: "Please fill in all fields."
       }
     },
-    footer: { note: "Malika Fofana, AI &amp; Data Science" }
+    footer: { note: "Malika Fofana, AI &amp; Data Engineer" }
   }
 };
 
