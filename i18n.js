@@ -7,7 +7,7 @@ const I18N = {
       role: "IA &amp; Data Science",
       tagline: "Comprendre <em class=\"c-blue\">l'esprit</em>, révéler le <em class=\"c-red\">potentiel,</em><br>bâtir un avenir <em class=\"c-blue\">meilleur</em>."
     },
-    photo: { hero: "Ta photo ici", contact: "Ta photo ici" },
+    photo: { hero: "Votre photo ici", contact: "Votre photo ici" },
     symbols: {
       gradient: "Descente de gradient : la méthode qui permet à un modèle d'apprendre en corrigeant peu à peu ses erreurs.",
       sigmoid: "Fonction sigmoïde : transforme n'importe quel signal en une probabilité entre 0 et 1.",
@@ -58,7 +58,7 @@ const I18N = {
     },
     certs: {
       title: "Certifications",
-      subtitle: "Clique sur une carte pour voir ce qu'elle couvre.",
+      subtitle: "Cliquez sur une carte pour voir ce qu'elle couvre.",
       flipHint: "Cliquer pour retourner",
       domainsLabel: "Domaines&nbsp;:",
       genai: { title: "Generative AI in Action", back: "Certification consacrée à l'intelligence artificielle générative et à ses applications.", domains: "<span>Generative AI</span><span>LLM</span><span>AI</span>" },
@@ -75,14 +75,14 @@ const I18N = {
       copied: "Adresse copiée !",
       open: "Au-delà de l'<span class=\"glow-word glow-blue\">alternance</span>, je reste ouverte à toute forme de <span class=\"glow-word glow-red\">collaboration</span>.",
       form: {
-        eyebrow: "Ou écris-moi directement",
+        eyebrow: "Ou écrivez-moi directement",
         name: "Nom et prénom",
         email: "Email",
         message: "Message",
         submit: "Envoyer le message",
         sending: "Envoi en cours…",
-        success: "Message envoyé, merci ! Je te réponds rapidement.",
-        error: "Une erreur est survenue, réessaie ou écris-moi directement par email.",
+        success: "Message envoyé, merci ! Je vous réponds rapidement.",
+        error: "Une erreur est survenue, réessayez ou écrivez-moi directement par email.",
         missing: "Merci de remplir tous les champs."
       }
     },

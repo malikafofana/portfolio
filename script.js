@@ -31,7 +31,7 @@ if (emailLink){
 /* Paste your Cloudflare Worker URL here once deployed, e.g.:
    'https://portfolio-contact.YOURNAME.workers.dev'
    (see cloudflare-worker/worker.js for the deploy steps). */
-const CONTACT_ENDPOINT = 'https://portfolio-contact.fofanamalika1224.workers.dev';
+const CONTACT_ENDPOINT = '/api/contact';
 
 const contactForm = document.getElementById('contact-form');
 if (contactForm){
@@ -86,7 +86,7 @@ if (contactForm){
       setStatus(f.success || 'Message envoyé, merci !', 'success');
       contactForm.reset();
     } catch (err) {
-      setStatus(f.error || "Une erreur est survenue, réessaie ou écris-moi directement par email.", 'error');
+      setStatus(f.error || "Une erreur est survenue, réessayez ou écrivez-moi directement par email.", 'error');
     } finally {
       cfSubmit.classList.remove('loading');
       cfSubmit.disabled = false;
