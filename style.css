@@ -578,10 +578,13 @@ p{ margin: 0; }
 
 /* mockups embedded in timeline cards */
 .phone-mock{
+  display: block;
   width: 140px; height: 290px; margin: 14px auto 12px; border-radius: 24px;
   border: 2px solid var(--line-strong); background: linear-gradient(160deg, rgba(61,107,255,0.10), rgba(255,59,82,0.10));
-  position: relative; overflow: hidden; transition: border-color 0.3s ease;
+  position: relative; overflow: hidden; transition: border-color 0.3s ease, transform 0.25s ease;
+  cursor: pointer;
 }
+.phone-mock-link:hover{ transform: translateY(-3px); }
 .t-card:hover .phone-mock{ border-color: var(--blue-glow); }
 .phone-mock-notch{ position: absolute; top: 8px; left: 50%; width: 32px; height: 5px; margin-left: -16px; border-radius: 4px; background: rgba(244,245,248,0.5); z-index: 2; }
 .phone-mock-screen{ position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; padding: 16px; text-align: center; }
@@ -592,7 +595,8 @@ p{ margin: 0; }
 .store-badges{ display: flex; gap: 10px; margin-bottom: 6px; }
 .t-entry[data-side="right"] .store-badges{ justify-content: flex-start; }
 .t-entry[data-side="left"] .store-badges{ justify-content: flex-end; }
-.store-badge{ display: inline-flex; align-items: center; gap: 6px; font-size: 11px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; cursor: help; }
+.store-badge{ display: inline-flex; align-items: center; gap: 6px; font-size: 11px; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; cursor: pointer; text-decoration: none; transition: border-color 0.25s ease, color 0.25s ease; }
+.store-badge:hover{ border-color: var(--blue-glow); color: var(--ink); }
 
 .browser-mock{ display: block; margin: 14px 0 4px; border: 1px solid var(--line-strong); border-radius: 6px; overflow: hidden; text-decoration: none; transition: border-color 0.3s ease; }
 .t-card:hover .browser-mock{ border-color: var(--blue-glow); }

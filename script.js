@@ -1,3 +1,19 @@
+/* ===================== HOLYCONNECT SMART STORE LINK ===================== */
+/* Phone preview -> App Store on iOS, Google Play on Android, website otherwise. */
+const holyconnectPhone = document.getElementById('holyconnect-phone');
+if (holyconnectPhone){
+  const ua = navigator.userAgent || '';
+  const isIOS = /iPhone|iPad|iPod/.test(ua) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1); /* modern iPadOS reports as Mac */
+  const isAndroid = /Android/.test(ua);
+
+  let holyconnectUrl = 'https://holyconnect.app';
+  if (isIOS) holyconnectUrl = 'https://apps.apple.com/app/holyconnect/id6791257222';
+  else if (isAndroid) holyconnectUrl = 'https://play.google.com/store/apps/details?id=app.holyconnect.mobile';
+
+  holyconnectPhone.href = holyconnectUrl;
+}
+
 /* ===================== COPY EMAIL TO CLIPBOARD ===================== */
 const emailLink = document.getElementById('email-link');
 const toastEl = document.getElementById('toast');
@@ -31,7 +47,7 @@ if (emailLink){
 /* Paste your Cloudflare Worker URL here once deployed, e.g.:
    'https://portfolio-contact.YOURNAME.workers.dev'
    (see cloudflare-worker/worker.js for the deploy steps). */
-const CONTACT_ENDPOINT = 'https://portfolio-contact.fofanamalika1224.workers.dev';
+const CONTACT_ENDPOINT = '/api/contact';
 
 const contactForm = document.getElementById('contact-form');
 if (contactForm){
