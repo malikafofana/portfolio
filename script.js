@@ -47,7 +47,7 @@ if (emailLink){
 /* Paste your Cloudflare Worker URL here once deployed, e.g.:
    'https://portfolio-contact.YOURNAME.workers.dev'
    (see cloudflare-worker/worker.js for the deploy steps). */
-const CONTACT_ENDPOINT = '/api/contact';
+const CONTACT_ENDPOINT = 'https://portfolio-contact.fofanamalika1224.workers.dev';
 
 const contactForm = document.getElementById('contact-form');
 if (contactForm){
