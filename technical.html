@@ -1,0 +1,1314 @@
+<!doctype html>
+<html lang="fr">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Malika Fofana · Engineering Lab</title>
+<style>
+:root{--bg:#0a101c;--panel:#131d2e;--ink:#edf4fc;--muted:#9baec5;--line:#29384d;--mint:#83e7cf;--violet:#b8a5fa;color-scheme:dark}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.65 system-ui,-apple-system,sans-serif}a{color:inherit;text-decoration:none}button,input{font:inherit}button{cursor:pointer}.shell{max-width:1180px;margin:auto;padding:0 32px}nav{display:flex;justify-content:space-between;align-items:center;padding:25px 0;border-bottom:1px solid var(--line);gap:20px}.brand{font-weight:700}.brand span{color:var(--mint)}.navlinks{display:flex;gap:25px;font-size:13px;color:var(--muted)}.hero{padding:78px 0 50px;display:grid;grid-template-columns:1.6fr 1fr;gap:60px;align-items:center}.eyebrow{font:12px/1.5 ui-monospace,monospace;letter-spacing:.16em;color:var(--mint);text-transform:uppercase}h1{font-size:clamp(38px,5.8vw,70px);line-height:1.08;letter-spacing:-.045em;margin:22px 0}h1 span{color:var(--mint)}p{color:var(--muted);margin:16px 0}.hero p{max-width:620px;font-size:17px}.pill{display:inline-flex;border:1px solid var(--line);padding:8px 14px;border-radius:30px;color:var(--muted);font-size:12px}.heroaside{border-left:1px solid var(--line);padding:22px 0 22px 30px}.heroaside b{font-size:21px;color:var(--ink)}.heroaside p{font-size:14px}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.button{display:inline-block;background:var(--mint);color:#08141c;border:1px solid var(--mint);padding:12px 18px;border-radius:8px;font-weight:650;font-size:14px}.ghost{background:transparent;color:var(--ink);border-color:var(--line)}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:24px;padding-top:55px}.sectionhead h2{font-size:32px;letter-spacing:-.03em;margin:8px 0}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}.filters button{background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:20px;padding:7px 16px;font-size:13px}.filters button.active{background:var(--mint);color:#08141c;border-color:var(--mint)}.projects{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{border:1px solid var(--line);background:var(--panel);border-radius:16px;padding:26px;display:flex;flex-direction:column}.card[hidden]{display:none}.num{font:12px ui-monospace,monospace;color:var(--mint);margin-bottom:22px}.card h3{font-size:24px;line-height:1.2;margin:0}.card p{font-size:14px}.tags{display:flex;flex-wrap:wrap;gap:6px;margin:16px 0}.tag{font:11px ui-monospace,monospace;background:#202d43;color:#b6c6d9;padding:4px 8px;border-radius:4px}.card .metric{border-top:1px solid var(--line);padding-top:18px;margin-top:auto}.metric b{font-size:32px;color:var(--mint)}.metric span{display:block;color:var(--muted);font-size:12px}.card details{margin-top:20px;border-top:1px solid var(--line);padding-top:12px;font-size:13px}summary{cursor:pointer;color:var(--violet)}details p{font-size:13px}.lab{display:grid;grid-template-columns:1.1fr 1fr;gap:22px;margin-top:25px}.panel{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:30px}.panel h3{font-size:22px;margin:0}.panel p{font-size:14px}.tabbar{display:flex;gap:8px;margin:22px 0}.tabbar button{border:1px solid var(--line);background:#0a101c;color:var(--muted);border-radius:6px;padding:8px 12px;font-size:12px}.tabbar button[aria-pressed=true]{color:var(--mint);border-color:var(--mint)}.barrow{margin:16px 0}.barlabel{display:flex;justify-content:space-between;font-size:13px;margin-bottom:7px}.track{height:10px;background:#25344c;border-radius:6px;overflow:hidden}.fill{height:100%;background:var(--mint);border-radius:6px;transition:width .25s}.note{font-size:12px!important}.inputs{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin:22px 0}.inputs label{font-size:12px;color:var(--muted)}input{width:100%;border:1px solid #35465e;background:#0a101c;color:var(--ink);padding:9px;border-radius:6px;margin-top:6px}.score{font-size:46px;line-height:1.2;color:var(--mint)}.scorelabel{font-size:12px;color:var(--muted)}.evidence{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin:26px 0}.evidence h3{font-size:18px}.evidence p{font-size:14px}.divider{border-top:1px solid var(--line);margin-top:48px}footer{padding:32px 0 40px;color:var(--muted);font-size:12px;display:flex;justify-content:space-between;gap:20px}:focus-visible{outline:3px solid var(--violet);outline-offset:4px}@media(max-width:900px){.hero{grid-template-columns:1fr;gap:20px;padding-top:50px}.heroaside{padding:15px 20px}.projects{grid-template-columns:1fr}.lab{grid-template-columns:1fr}.evidence{grid-template-columns:1fr}.shell{padding:0 20px}.sectionhead{display:block}.navlinks{gap:14px}footer{display:block}}
+</style></head>
+<body><div class="shell">
+<nav aria-label="Navigation"><a class="brand" href="https://malikafofana.github.io/portfolio/">Malika<span>.</span></a><div class="navlinks"><a href="#projects">Projets</a><a href="#lab">Laboratoire</a><a href="https://www.linkedin.com/in/malika-fofana/">Contact ↗</a></div></nav>
+<header class="hero"><div><div class="eyebrow">AI & Data Engineer / Software Developer</div><img src="assets/github/header-motion.gif" alt="Malika Fofana — AI & Data Engineer et Software Developer, bannière animée" width="880" height="264" style="width:100%;height:auto;border-radius:12px;margin-top:18px"><h1>Du code.<br>Des données.<br><span>Des systèmes utiles.</span></h1><p>Je développe des applications web et mobiles et j'explore l'IA avec une exigence simple : rendre le fonctionnement et les résultats vérifiables.</p><div class="actions"><a class="button" href="#projects">Explorer les projets ↓</a><a class="button ghost" href="https://github.com/malikafofana">Mon GitHub ↗</a></div></div><aside class="heroaside"><span class="pill">Master 1 · aivancity · Paris</span><p><b>Développement × IA × Data</b><br>Produits full-stack, pipelines de données et expérimentation ML.</p><p>Expériences : Orange CI, Kaydan Technology, Veltis et JurisIA — d'après mon CV.</p><p>Recherche d'alternance : octobre 2026<br>3 semaines entreprise / 1 semaine école.</p><span class="eyebrow">Engineering portfolio · prototypes locaux</span></aside></header>
+<section id="projects"><div class="sectionhead"><div><div class="eyebrow">Selected engineering work</div><h2>La technique, preuves à l'appui.</h2></div><p>Deux nouveaux prototypes exécutés<br>et une étude académique documentée.</p></div>
+<div class="filters" role="group" aria-label="Filtrer les projets"><button class="active" data-filter="all" aria-pressed="true">Tous</button><button data-filter="data" aria-pressed="false">Data & ML</button><button data-filter="ai" aria-pressed="false">Recherche documentaire</button><button data-filter="research" aria-pressed="false">Deep Learning</button></div>
+<div class="projects">
+<article class="card" data-category="data"><div class="num">01 / DATA PLATFORM</div><h3><a href="https://github.com/malikafofana/portfolio/tree/main/projects/telco-signal">Telco Signal ↗</a></h3><p>Des événements télécom à un scoring d'inactivité : ingestion, contrôle qualité, features temporelles, comparaison ML et API.</p><div class="tags"><span class="tag">Python</span><span class="tag">SQL</span><span class="tag">scikit-learn</span></div><div class="metric"><b>46 578</b><span>événements synthétiques validés · rejeu idempotent</span></div><details><summary>Architecture & limites</summary><p>CSV → quarantaine → SQLite → features historiques → validation temporelle → rapport et API logistique.</p><p>Simulation de 600 clients sur 240 jours. Aucun code ni fichier client Orange. Les scores ne prouvent pas de performance métier réelle.</p><p>6 tests automatisés. Prototype batch local, sans orchestration distribuée.</p></details></article>
+<article class="card" data-category="ai"><div class="num">02 / RETRIEVAL LAB</div><h3><a href="https://github.com/malikafofana/portfolio/tree/main/projects/evidence-search">Evidence Search ↗</a></h3><p>Comparer les méthodes de retrieval, retrouver les sources et mesurer quand un moteur doit s'abstenir.</p><div class="tags"><span class="tag">BM25</span><span class="tag">TF-IDF</span><span class="tag">Rank fusion</span></div><div class="metric"><b>24</b><span>questions de test · 3 méthodes comparées</span></div><details><summary>Architecture & limites</summary><p>Markdown → sections → index lexical → classement → extrait exact avec hash de provenance. Démonstration interactive via API locale.</p><p>Corpus et questions rédigés pour la démo. Aucun LLM ni embedding neuronal. L'hybride répond encore à tort à 3 des 6 questions hors corpus.</p><p>7 tests automatisés. La fusion ne surpasse pas TF-IDF sur ce jeu.</p></details></article>
+<article class="card" data-category="research"><div class="num">03 / ACADEMIC RESEARCH</div><h3><a href="https://github.com/malikafofana/portfolio/tree/main/projects/alzheimer-mri-study">Alzheimer MRI ↗</a></h3><p>CNN, transfer learning, Grad-CAM et DCGAN : comprendre l'effet du déséquilibre et d'une augmentation qui échoue.</p><div class="tags"><span class="tag">Keras</span><span class="tag">ResNet50</span><span class="tag">Grad-CAM</span></div><div class="metric"><b>0,5725</b><span>macro-F1 historique · CNN amélioré · non réentraîné ici</span></div><details><summary>Crédits & audit</summary><p>Travail académique de Malika Fofana et Klara Mladenovic. Le split historique est réalisé par image; son indépendance par patient n'est pas démontrée.</p><p>Notebook nettoyé, rapports historiques conservés, audit de doublons et split par patient ajouté comme protocole distinct. Deux tests de l'utilitaire sur fixtures synthétiques.</p><p>Aucune validation clinique, aucune redistribution d'IRM ou de poids.</p></details></article>
+</div></section>
+<section id="lab"><div class="sectionhead"><div><div class="eyebrow">Interactive evidence</div><h2>Inspecter. Comparer. Comprendre.</h2></div></div><div class="lab">
+<div class="panel"><h3>Complexité ≠ meilleure performance</h3><p>Compare les résultats réellement calculés pour ces prototypes.</p><div class="tabbar"><button data-chart="telco" aria-pressed="true">Télécom · PR-AUC</button><button data-chart="search" aria-pressed="false">Retrieval · MRR@3</button><button data-chart="mri" aria-pressed="false">IRM · macro-F1</button></div><div id="bars"></div><p id="chartnote" class="note"></p></div>
+<div class="panel"><h3>Essayer le modèle logistique</h3><p>Inférence dans le navigateur avec les coefficients du modèle entraîné sur la simulation. Aucun appel extérieur.</p><div class="inputs" id="inputs"></div><div class="score" id="score" role="status"></div><div class="scorelabel" id="scorelabel"></div><p class="note">Ce score décrit une simulation. Il ne sert pas à prendre une décision sur une personne réelle.</p></div></div></section>
+<section><div class="sectionhead"><div><div class="eyebrow">Beyond notebooks</div><h2>Je construis aussi des produits.</h2></div></div><div class="evidence"><div><h3>HolyConnect</h3><p>Fondatrice et développeuse d'une application sociale web et mobile : Next.js, Capacitor, Firebase, recherche IA et notifications. Code privé.</p></div><div><h3>Expériences d'ingénierie</h3><p>ATS, OCR, blockchain de vérification de diplômes et ingestion de données cliniques, selon les missions décrites dans mon CV. Les sources d'entreprise ne sont pas redistribuées.</p></div><div><h3>Recherche & innovation</h3><p>Intérêt pour les systèmes IA, les plateformes data, la recherche appliquée et les sciences du vivant. Une spécialisation santé, avec une base technique qui dépasse ce secteur.</p></div></div></section>
+<div class="divider"></div><footer><span>Malika Fofana · Build / Measure / Understand</span><span>Prototypes préparés avec assistance IA · résultats et limites explicites</span></footer>
+</div>
+<script>
+const TELCO={
+  "origin": {
+    "customers": 600,
+    "days": 240,
+    "seed": 42,
+    "data_origin": "synthetic_markov_process"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "sklearn": "1.8.0",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3"
+  },
+  "quality": {
+    "inserted": 46578,
+    "duplicates": 10,
+    "rejected": 2,
+    "sha256": "b1956bf25fd7065faa6aa2173ff9ff5df152ff76713438e7a28550271b4a6f0d"
+  },
+  "replay": {
+    "inserted": 0,
+    "duplicates": 46588,
+    "rejected": 2,
+    "sha256": "b1956bf25fd7065faa6aa2173ff9ff5df152ff76713438e7a28550271b4a6f0d"
+  },
+  "selection": "logistic",
+  "models": {
+    "dummy": {
+      "validation": {
+        "pr_auc": 0.31166666666666665,
+        "brier": 0.21553333333333333,
+        "f1": 0.47522236340533675,
+        "precision": 0.31166666666666665,
+        "recall": 1.0,
+        "threshold": 0.1
+      },
+      "test": {
+        "pr_auc": 0.3233333333333333,
+        "brier": 0.22066666666666662,
+        "f1": 0.48866498740554154,
+        "precision": 0.3233333333333333,
+        "recall": 1.0,
+        "threshold": 0.1
+      }
+    },
+    "logistic": {
+      "validation": {
+        "pr_auc": 0.7465427622871222,
+        "brier": 0.09420770452088886,
+        "f1": 0.8317757009345794,
+        "precision": 0.7385892116182573,
+        "recall": 0.9518716577540107,
+        "threshold": 0.35
+      },
+      "test": {
+        "pr_auc": 0.6275472479233434,
+        "brier": 0.1392451725267343,
+        "f1": 0.7317073170731707,
+        "precision": 0.642023346303502,
+        "recall": 0.8505154639175257,
+        "threshold": 0.35
+      }
+    },
+    "forest": {
+      "validation": {
+        "pr_auc": 0.7395544595517923,
+        "brier": 0.0952520533895242,
+        "f1": 0.827906976744186,
+        "precision": 0.7325102880658436,
+        "recall": 0.9518716577540107,
+        "threshold": 0.4
+      },
+      "test": {
+        "pr_auc": 0.6246924014298559,
+        "brier": 0.1397632020913584,
+        "f1": 0.7328918322295805,
+        "precision": 0.640926640926641,
+        "recall": 0.8556701030927835,
+        "threshold": 0.4
+      }
+    }
+  },
+  "split": {
+    "train_cutoff_days": [
+      60,
+      90,
+      120
+    ],
+    "validation_cutoff_day": 150,
+    "test_cutoff_day": 180,
+    "target_horizon_days": 30,
+    "same_customers_over_time": true
+  },
+  "prevalence": {
+    "train": 0.28,
+    "validation": 0.31166666666666665,
+    "test": 0.3233333333333333
+  },
+  "psi": {
+    "active_days_7": 0.021731025295053937,
+    "active_days_30": 0.035345433922094355,
+    "days_since_activity": 0.03832583145206814,
+    "units_7": 0.017171683701095404,
+    "units_30": 0.03397406081964456,
+    "recent_share": 0.022985456685223234
+  },
+  "top_scores": [
+    {
+      "customer_id": "SYN-00132",
+      "cutoff": "2025-06-30",
+      "risk": 0.77604,
+      "actual": 0,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00427",
+      "cutoff": "2025-06-30",
+      "risk": 0.7728,
+      "actual": 0,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00265",
+      "cutoff": "2025-06-30",
+      "risk": 0.76284,
+      "actual": 0,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00455",
+      "cutoff": "2025-06-30",
+      "risk": 0.7534,
+      "actual": 1,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00246",
+      "cutoff": "2025-06-30",
+      "risk": 0.75281,
+      "actual": 1,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00215",
+      "cutoff": "2025-06-30",
+      "risk": 0.75105,
+      "actual": 0,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00071",
+      "cutoff": "2025-06-30",
+      "risk": 0.74892,
+      "actual": 1,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00577",
+      "cutoff": "2025-06-30",
+      "risk": 0.74883,
+      "actual": 0,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00152",
+      "cutoff": "2025-06-30",
+      "risk": 0.74759,
+      "actual": 1,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00040",
+      "cutoff": "2025-06-30",
+      "risk": 0.74745,
+      "actual": 0,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00444",
+      "cutoff": "2025-06-30",
+      "risk": 0.74356,
+      "actual": 1,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00234",
+      "cutoff": "2025-06-30",
+      "risk": 0.73319,
+      "actual": 1,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00222",
+      "cutoff": "2025-06-30",
+      "risk": 0.73137,
+      "actual": 1,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00002",
+      "cutoff": "2025-06-30",
+      "risk": 0.73056,
+      "actual": 1,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00517",
+      "cutoff": "2025-06-30",
+      "risk": 0.72935,
+      "actual": 1,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00187",
+      "cutoff": "2025-06-30",
+      "risk": 0.72861,
+      "actual": 1,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00144",
+      "cutoff": "2025-06-30",
+      "risk": 0.72344,
+      "actual": 1,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00039",
+      "cutoff": "2025-06-30",
+      "risk": 0.7232,
+      "actual": 1,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00522",
+      "cutoff": "2025-06-30",
+      "risk": 0.72317,
+      "actual": 0,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00505",
+      "cutoff": "2025-06-30",
+      "risk": 0.71969,
+      "actual": 0,
+      "flagged": 1
+    }
+  ]
+};
+const SEARCH={
+  "data_origin": "authored_demo_runbooks_and_queries",
+  "corpus_chunks": 18,
+  "threshold": 0.15000000000000002,
+  "threshold_selection": "development_answerability_accuracy; lowest threshold on ties",
+  "development_cases": 8,
+  "test_cases": 24,
+  "limitations": [
+    "Small authored benchmark; not independently collected",
+    "Character TF-IDF is lexical, not a neural embedding",
+    "Extractive responses; no LLM generation",
+    "No proof of semantic correctness from cosine similarity"
+  ],
+  "test": {
+    "bm25": {
+      "mrr_at_3": 0.8425925925925926,
+      "recall_at_3": 0.9444444444444444,
+      "answerability_accuracy": 0.9166666666666666,
+      "negative_abstention_rate": 0.6666666666666666,
+      "positive_coverage": 1.0,
+      "cases": [
+        {
+          "query": "Pourquoi un event_id identique avec contenu différent doit être rejeté ?",
+          "relevant_sources": [
+            "ingestion.md"
+          ],
+          "retrieved_sources": [
+            "ingestion.md",
+            "security.md",
+            "retrieval.md"
+          ],
+          "status": "answered",
+          "confidence": 0.4406122843686913,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Que faire des valeurs négatives dans les imports ?",
+          "relevant_sources": [
+            "ingestion.md"
+          ],
+          "retrieved_sources": [
+            "drift.md",
+            "reproducibility.md",
+            "retrieval.md"
+          ],
+          "status": "answered",
+          "confidence": 0.2598936326441005,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Quelles dates utiliser pour calculer les variables prédictives ?",
+          "relevant_sources": [
+            "features.md"
+          ],
+          "retrieved_sources": [
+            "drift.md",
+            "mri.md",
+            "features.md"
+          ],
+          "status": "answered",
+          "confidence": 0.4135559278441481,
+          "first_relevant_rank": 3
+        },
+        {
+          "query": "Pourquoi faut-il une couverture complète avant le label ?",
+          "relevant_sources": [
+            "features.md"
+          ],
+          "retrieved_sources": [
+            "features.md",
+            "security.md"
+          ],
+          "status": "answered",
+          "confidence": 0.4568059197036366,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quelles métriques pour les classes rares ?",
+          "relevant_sources": [
+            "metrics.md"
+          ],
+          "retrieved_sources": [
+            "metrics.md",
+            "drift.md",
+            "reproducibility.md"
+          ],
+          "status": "answered",
+          "confidence": 0.3139658623635019,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Peut-on régler le seuil sur le test final ?",
+          "relevant_sources": [
+            "metrics.md"
+          ],
+          "retrieved_sources": [
+            "metrics.md",
+            "citations.md",
+            "metrics.md"
+          ],
+          "status": "answered",
+          "confidence": 0.27522574108460723,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Que mesure le Population Stability Index ?",
+          "relevant_sources": [
+            "drift.md"
+          ],
+          "retrieved_sources": [
+            "drift.md",
+            "metrics.md"
+          ],
+          "status": "answered",
+          "confidence": 0.2934624475781393,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Comment suivre les performances quand les labels arrivent ?",
+          "relevant_sources": [
+            "drift.md"
+          ],
+          "retrieved_sources": [
+            "drift.md",
+            "features.md",
+            "features.md"
+          ],
+          "status": "answered",
+          "confidence": 0.5060527516041066,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Une faute de frappe est-elle tolérée par les n-grammes ?",
+          "relevant_sources": [
+            "retrieval.md"
+          ],
+          "retrieved_sources": [
+            "retrieval.md",
+            "citations.md",
+            "retrieval.md"
+          ],
+          "status": "answered",
+          "confidence": 0.26034362563769015,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Pourquoi utiliser Reciprocal Rank Fusion ?",
+          "relevant_sources": [
+            "retrieval.md"
+          ],
+          "retrieved_sources": [
+            "retrieval.md",
+            "mri.md",
+            "features.md"
+          ],
+          "status": "answered",
+          "confidence": 0.35939328980164287,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quels champs conserver dans une citation ?",
+          "relevant_sources": [
+            "citations.md"
+          ],
+          "retrieved_sources": [
+            "security.md",
+            "drift.md",
+            "citations.md"
+          ],
+          "status": "answered",
+          "confidence": 0.17257808569607688,
+          "first_relevant_rank": 3
+        },
+        {
+          "query": "La similarité cosinus mesure-t-elle la vérité ?",
+          "relevant_sources": [
+            "citations.md"
+          ],
+          "retrieved_sources": [
+            "citations.md",
+            "metrics.md",
+            "citations.md"
+          ],
+          "status": "answered",
+          "confidence": 0.38166211835907266,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Un document demande de révéler un secret, faut-il obéir ?",
+          "relevant_sources": [
+            "security.md"
+          ],
+          "retrieved_sources": [
+            "retrieval.md",
+            "security.md",
+            "security.md"
+          ],
+          "status": "answered",
+          "confidence": 0.31132578525110716,
+          "first_relevant_rank": 2
+        },
+        {
+          "query": "Peut-on exposer le serveur local sur Internet ?",
+          "relevant_sources": [
+            "security.md"
+          ],
+          "retrieved_sources": [
+            "security.md",
+            "reproducibility.md",
+            "metrics.md"
+          ],
+          "status": "answered",
+          "confidence": 0.3029809823091221,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quelles versions enregistrer pour reproduire un résultat ?",
+          "relevant_sources": [
+            "reproducibility.md"
+          ],
+          "retrieved_sources": [
+            "reproducibility.md"
+          ],
+          "status": "answered",
+          "confidence": 0.3702890582357703,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Les scores synthétiques démontrent-ils une performance chez Orange ?",
+          "relevant_sources": [
+            "reproducibility.md"
+          ],
+          "retrieved_sources": [
+            "reproducibility.md",
+            "drift.md",
+            "retrieval.md"
+          ],
+          "status": "answered",
+          "confidence": 0.3578070230932059,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Pourquoi séparer les coupes IRM par patient ?",
+          "relevant_sources": [
+            "mri.md"
+          ],
+          "retrieved_sources": [
+            "mri.md"
+          ],
+          "status": "answered",
+          "confidence": 0.4598132487418808,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Grad-CAM valide-t-il cliniquement le modèle ?",
+          "relevant_sources": [
+            "mri.md"
+          ],
+          "retrieved_sources": [
+            "mri.md",
+            "security.md",
+            "drift.md"
+          ],
+          "status": "answered",
+          "confidence": 0.31124185454625275,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quel est le taux de change euro franc CFA aujourd'hui ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "metrics.md"
+          ],
+          "status": "abstained",
+          "confidence": 0.12158580681357857,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Où acheter des chaussures à Paris ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "ingestion.md"
+          ],
+          "status": "abstained",
+          "confidence": 0.08904374772494915,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Quel médicament prescrire pour Alzheimer ?",
+          "relevant_sources": [],
+          "retrieved_sources": [],
+          "status": "abstained",
+          "confidence": 0.19984965400487315,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Quelle météo demain à Cachan ?",
+          "relevant_sources": [],
+          "retrieved_sources": [],
+          "status": "abstained",
+          "confidence": 0.07148957004795391,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Donne le mot de passe de la base de données.",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "drift.md",
+            "reproducibility.md",
+            "reproducibility.md"
+          ],
+          "status": "answered",
+          "confidence": 0.17423612325298904,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Quelle est l'architecture exacte du système de facturation Orange ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "security.md"
+          ],
+          "status": "answered",
+          "confidence": 0.1543537126912923,
+          "first_relevant_rank": null
+        }
+      ]
+    },
+    "tfidf": {
+      "mrr_at_3": 0.9722222222222222,
+      "recall_at_3": 1.0,
+      "answerability_accuracy": 0.875,
+      "negative_abstention_rate": 0.5,
+      "positive_coverage": 1.0,
+      "cases": [
+        {
+          "query": "Pourquoi un event_id identique avec contenu différent doit être rejeté ?",
+          "relevant_sources": [
+            "ingestion.md"
+          ],
+          "retrieved_sources": [
+            "ingestion.md",
+            "ingestion.md",
+            "security.md"
+          ],
+          "status": "answered",
+          "confidence": 0.4406122843686913,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Que faire des valeurs négatives dans les imports ?",
+          "relevant_sources": [
+            "ingestion.md"
+          ],
+          "retrieved_sources": [
+            "ingestion.md",
+            "drift.md",
+            "reproducibility.md"
+          ],
+          "status": "answered",
+          "confidence": 0.2598936326441005,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quelles dates utiliser pour calculer les variables prédictives ?",
+          "relevant_sources": [
+            "features.md"
+          ],
+          "retrieved_sources": [
+            "features.md",
+            "drift.md",
+            "mri.md"
+          ],
+          "status": "answered",
+          "confidence": 0.4135559278441481,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Pourquoi faut-il une couverture complète avant le label ?",
+          "relevant_sources": [
+            "features.md"
+          ],
+          "retrieved_sources": [
+            "features.md",
+            "features.md",
+            "mri.md"
+          ],
+          "status": "answered",
+          "confidence": 0.4568059197036366,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quelles métriques pour les classes rares ?",
+          "relevant_sources": [
+            "metrics.md"
+          ],
+          "retrieved_sources": [
+            "metrics.md",
+            "retrieval.md",
+            "reproducibility.md"
+          ],
+          "status": "answered",
+          "confidence": 0.3139658623635019,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Peut-on régler le seuil sur le test final ?",
+          "relevant_sources": [
+            "metrics.md"
+          ],
+          "retrieved_sources": [
+            "metrics.md",
+            "citations.md",
+            "metrics.md"
+          ],
+          "status": "answered",
+          "confidence": 0.27522574108460723,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Que mesure le Population Stability Index ?",
+          "relevant_sources": [
+            "drift.md"
+          ],
+          "retrieved_sources": [
+            "drift.md",
+            "metrics.md",
+            "mri.md"
+          ],
+          "status": "answered",
+          "confidence": 0.2934624475781393,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Comment suivre les performances quand les labels arrivent ?",
+          "relevant_sources": [
+            "drift.md"
+          ],
+          "retrieved_sources": [
+            "drift.md",
+            "drift.md",
+            "features.md"
+          ],
+          "status": "answered",
+          "confidence": 0.5060527516041066,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Une faute de frappe est-elle tolérée par les n-grammes ?",
+          "relevant_sources": [
+            "retrieval.md"
+          ],
+          "retrieved_sources": [
+            "retrieval.md",
+            "drift.md",
+            "reproducibility.md"
+          ],
+          "status": "answered",
+          "confidence": 0.26034362563769015,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Pourquoi utiliser Reciprocal Rank Fusion ?",
+          "relevant_sources": [
+            "retrieval.md"
+          ],
+          "retrieved_sources": [
+            "retrieval.md",
+            "features.md",
+            "citations.md"
+          ],
+          "status": "answered",
+          "confidence": 0.35939328980164287,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quels champs conserver dans une citation ?",
+          "relevant_sources": [
+            "citations.md"
+          ],
+          "retrieved_sources": [
+            "drift.md",
+            "citations.md",
+            "security.md"
+          ],
+          "status": "answered",
+          "confidence": 0.17257808569607688,
+          "first_relevant_rank": 2
+        },
+        {
+          "query": "La similarité cosinus mesure-t-elle la vérité ?",
+          "relevant_sources": [
+            "citations.md"
+          ],
+          "retrieved_sources": [
+            "citations.md",
+            "metrics.md",
+            "features.md"
+          ],
+          "status": "answered",
+          "confidence": 0.38166211835907266,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Un document demande de révéler un secret, faut-il obéir ?",
+          "relevant_sources": [
+            "security.md"
+          ],
+          "retrieved_sources": [
+            "security.md",
+            "retrieval.md",
+            "ingestion.md"
+          ],
+          "status": "answered",
+          "confidence": 0.31132578525110716,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Peut-on exposer le serveur local sur Internet ?",
+          "relevant_sources": [
+            "security.md"
+          ],
+          "retrieved_sources": [
+            "security.md",
+            "mri.md",
+            "metrics.md"
+          ],
+          "status": "answered",
+          "confidence": 0.3029809823091221,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quelles versions enregistrer pour reproduire un résultat ?",
+          "relevant_sources": [
+            "reproducibility.md"
+          ],
+          "retrieved_sources": [
+            "reproducibility.md",
+            "features.md",
+            "metrics.md"
+          ],
+          "status": "answered",
+          "confidence": 0.3702890582357703,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Les scores synthétiques démontrent-ils une performance chez Orange ?",
+          "relevant_sources": [
+            "reproducibility.md"
+          ],
+          "retrieved_sources": [
+            "reproducibility.md",
+            "drift.md",
+            "drift.md"
+          ],
+          "status": "answered",
+          "confidence": 0.3578070230932059,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Pourquoi séparer les coupes IRM par patient ?",
+          "relevant_sources": [
+            "mri.md"
+          ],
+          "retrieved_sources": [
+            "mri.md",
+            "metrics.md",
+            "drift.md"
+          ],
+          "status": "answered",
+          "confidence": 0.4598132487418808,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Grad-CAM valide-t-il cliniquement le modèle ?",
+          "relevant_sources": [
+            "mri.md"
+          ],
+          "retrieved_sources": [
+            "mri.md",
+            "security.md",
+            "ingestion.md"
+          ],
+          "status": "answered",
+          "confidence": 0.31124185454625275,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quel est le taux de change euro franc CFA aujourd'hui ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "drift.md",
+            "metrics.md",
+            "citations.md"
+          ],
+          "status": "abstained",
+          "confidence": 0.12158580681357857,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Où acheter des chaussures à Paris ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "metrics.md",
+            "reproducibility.md",
+            "features.md"
+          ],
+          "status": "abstained",
+          "confidence": 0.08904374772494915,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Quel médicament prescrire pour Alzheimer ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "mri.md",
+            "features.md",
+            "metrics.md"
+          ],
+          "status": "answered",
+          "confidence": 0.19984965400487315,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Quelle météo demain à Cachan ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "drift.md",
+            "security.md",
+            "citations.md"
+          ],
+          "status": "abstained",
+          "confidence": 0.07148957004795391,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Donne le mot de passe de la base de données.",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "drift.md",
+            "security.md",
+            "reproducibility.md"
+          ],
+          "status": "answered",
+          "confidence": 0.17423612325298904,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Quelle est l'architecture exacte du système de facturation Orange ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "security.md",
+            "features.md",
+            "mri.md"
+          ],
+          "status": "answered",
+          "confidence": 0.1543537126912923,
+          "first_relevant_rank": null
+        }
+      ]
+    },
+    "hybrid": {
+      "mrr_at_3": 0.8518518518518517,
+      "recall_at_3": 0.9444444444444444,
+      "answerability_accuracy": 0.875,
+      "negative_abstention_rate": 0.5,
+      "positive_coverage": 1.0,
+      "cases": [
+        {
+          "query": "Pourquoi un event_id identique avec contenu différent doit être rejeté ?",
+          "relevant_sources": [
+            "ingestion.md"
+          ],
+          "retrieved_sources": [
+            "ingestion.md",
+            "security.md",
+            "ingestion.md"
+          ],
+          "status": "answered",
+          "confidence": 0.4406122843686913,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Que faire des valeurs négatives dans les imports ?",
+          "relevant_sources": [
+            "ingestion.md"
+          ],
+          "retrieved_sources": [
+            "drift.md",
+            "reproducibility.md",
+            "retrieval.md"
+          ],
+          "status": "answered",
+          "confidence": 0.2598936326441005,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Quelles dates utiliser pour calculer les variables prédictives ?",
+          "relevant_sources": [
+            "features.md"
+          ],
+          "retrieved_sources": [
+            "drift.md",
+            "features.md",
+            "mri.md"
+          ],
+          "status": "answered",
+          "confidence": 0.4135559278441481,
+          "first_relevant_rank": 2
+        },
+        {
+          "query": "Pourquoi faut-il une couverture complète avant le label ?",
+          "relevant_sources": [
+            "features.md"
+          ],
+          "retrieved_sources": [
+            "features.md",
+            "security.md",
+            "features.md"
+          ],
+          "status": "answered",
+          "confidence": 0.4568059197036366,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quelles métriques pour les classes rares ?",
+          "relevant_sources": [
+            "metrics.md"
+          ],
+          "retrieved_sources": [
+            "metrics.md",
+            "drift.md",
+            "reproducibility.md"
+          ],
+          "status": "answered",
+          "confidence": 0.3139658623635019,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Peut-on régler le seuil sur le test final ?",
+          "relevant_sources": [
+            "metrics.md"
+          ],
+          "retrieved_sources": [
+            "metrics.md",
+            "citations.md",
+            "metrics.md"
+          ],
+          "status": "answered",
+          "confidence": 0.27522574108460723,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Que mesure le Population Stability Index ?",
+          "relevant_sources": [
+            "drift.md"
+          ],
+          "retrieved_sources": [
+            "drift.md",
+            "metrics.md",
+            "mri.md"
+          ],
+          "status": "answered",
+          "confidence": 0.2934624475781393,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Comment suivre les performances quand les labels arrivent ?",
+          "relevant_sources": [
+            "drift.md"
+          ],
+          "retrieved_sources": [
+            "drift.md",
+            "features.md",
+            "features.md"
+          ],
+          "status": "answered",
+          "confidence": 0.5060527516041066,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Une faute de frappe est-elle tolérée par les n-grammes ?",
+          "relevant_sources": [
+            "retrieval.md"
+          ],
+          "retrieved_sources": [
+            "retrieval.md",
+            "drift.md",
+            "citations.md"
+          ],
+          "status": "answered",
+          "confidence": 0.26034362563769015,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Pourquoi utiliser Reciprocal Rank Fusion ?",
+          "relevant_sources": [
+            "retrieval.md"
+          ],
+          "retrieved_sources": [
+            "retrieval.md",
+            "features.md",
+            "mri.md"
+          ],
+          "status": "answered",
+          "confidence": 0.35939328980164287,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quels champs conserver dans une citation ?",
+          "relevant_sources": [
+            "citations.md"
+          ],
+          "retrieved_sources": [
+            "drift.md",
+            "security.md",
+            "citations.md"
+          ],
+          "status": "answered",
+          "confidence": 0.17257808569607688,
+          "first_relevant_rank": 3
+        },
+        {
+          "query": "La similarité cosinus mesure-t-elle la vérité ?",
+          "relevant_sources": [
+            "citations.md"
+          ],
+          "retrieved_sources": [
+            "citations.md",
+            "metrics.md",
+            "citations.md"
+          ],
+          "status": "answered",
+          "confidence": 0.38166211835907266,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Un document demande de révéler un secret, faut-il obéir ?",
+          "relevant_sources": [
+            "security.md"
+          ],
+          "retrieved_sources": [
+            "retrieval.md",
+            "security.md",
+            "security.md"
+          ],
+          "status": "answered",
+          "confidence": 0.31132578525110716,
+          "first_relevant_rank": 2
+        },
+        {
+          "query": "Peut-on exposer le serveur local sur Internet ?",
+          "relevant_sources": [
+            "security.md"
+          ],
+          "retrieved_sources": [
+            "security.md",
+            "metrics.md",
+            "reproducibility.md"
+          ],
+          "status": "answered",
+          "confidence": 0.3029809823091221,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quelles versions enregistrer pour reproduire un résultat ?",
+          "relevant_sources": [
+            "reproducibility.md"
+          ],
+          "retrieved_sources": [
+            "reproducibility.md",
+            "features.md",
+            "metrics.md"
+          ],
+          "status": "answered",
+          "confidence": 0.3702890582357703,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Les scores synthétiques démontrent-ils une performance chez Orange ?",
+          "relevant_sources": [
+            "reproducibility.md"
+          ],
+          "retrieved_sources": [
+            "reproducibility.md",
+            "drift.md",
+            "drift.md"
+          ],
+          "status": "answered",
+          "confidence": 0.3578070230932059,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Pourquoi séparer les coupes IRM par patient ?",
+          "relevant_sources": [
+            "mri.md"
+          ],
+          "retrieved_sources": [
+            "mri.md",
+            "metrics.md",
+            "drift.md"
+          ],
+          "status": "answered",
+          "confidence": 0.4598132487418808,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Grad-CAM valide-t-il cliniquement le modèle ?",
+          "relevant_sources": [
+            "mri.md"
+          ],
+          "retrieved_sources": [
+            "mri.md",
+            "security.md",
+            "drift.md"
+          ],
+          "status": "answered",
+          "confidence": 0.31124185454625275,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quel est le taux de change euro franc CFA aujourd'hui ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "metrics.md",
+            "drift.md",
+            "citations.md"
+          ],
+          "status": "abstained",
+          "confidence": 0.12158580681357857,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Où acheter des chaussures à Paris ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "ingestion.md",
+            "metrics.md",
+            "reproducibility.md"
+          ],
+          "status": "abstained",
+          "confidence": 0.08904374772494915,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Quel médicament prescrire pour Alzheimer ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "mri.md",
+            "features.md",
+            "metrics.md"
+          ],
+          "status": "answered",
+          "confidence": 0.19984965400487315,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Quelle météo demain à Cachan ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "drift.md",
+            "security.md",
+            "citations.md"
+          ],
+          "status": "abstained",
+          "confidence": 0.07148957004795391,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Donne le mot de passe de la base de données.",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "drift.md",
+            "reproducibility.md",
+            "reproducibility.md"
+          ],
+          "status": "answered",
+          "confidence": 0.17423612325298904,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Quelle est l'architecture exacte du système de facturation Orange ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "security.md",
+            "features.md",
+            "mri.md"
+          ],
+          "status": "answered",
+          "confidence": 0.1543537126912923,
+          "first_relevant_rank": null
+        }
+      ]
+    }
+  },
+  "corpus_sha256": "5d27370e7fed607d9bb70122052a74b6aa7846674c5fee596d068e4eb489f228"
+};
+const ARTIFACT={
+  "model": "logistic",
+  "features": [
+    "active_days_7",
+    "active_days_30",
+    "days_since_activity",
+    "units_7",
+    "units_30",
+    "recent_share"
+  ],
+  "mean": [
+    2.3938888888888887,
+    10.236666666666666,
+    10.917777777777777,
+    22.66935388888889,
+    97.59196666666666,
+    0.18297311367707725
+  ],
+  "scale": [
+    2.352980707501985,
+    8.758715659273339,
+    12.315568988324202,
+    25.090554131115343,
+    87.87114932916137,
+    0.2117516898957931
+  ],
+  "coef": [
+    -1.7565317232443722,
+    1.1930555273152095,
+    1.7792898338859748,
+    -0.32235817667682737,
+    0.22250430733710125,
+    0.5009354772977298
+  ],
+  "intercept": -1.8218564089134626,
+  "threshold": 0.35,
+  "data_origin": "synthetic"
+};
+const charts={telco:{rows:Object.entries(TELCO.models).map(([name,m])=>[name,m.test.pr_auc]),note:'PR-AUC sur le test synthétique. Prévalence : '+TELCO.prevalence.test.toFixed(3)+'. Sélection sur validation; ces chiffres ne sont pas des résultats Orange.'},search:{rows:Object.entries(SEARCH.test).map(([name,m])=>[name,m.mrr_at_3]),note:'MRR@3 sur 18 questions answerables d’un petit corpus rédigé. Les 6 questions hors corpus sont évaluées séparément pour l’abstention.'},mri:{rows:[['Baseline CNN',.1664],['Improved CNN',.5725],['ResNet50',.4474],['CNN + GAN',.4407]],note:'Résultats historiques du notebook fourni; non reproduits ici. Split par image, indépendance entre patients non démontrée.'}};
+function draw(kind){const root=document.getElementById('bars');root.replaceChildren();for(const [name,value] of charts[kind].rows){const row=document.createElement('div');row.className='barrow';const label=document.createElement('div');label.className='barlabel';const n=document.createElement('span');n.textContent=name;const v=document.createElement('span');v.textContent=value.toFixed(3);label.append(n,v);const track=document.createElement('div');track.className='track';const fill=document.createElement('div');fill.className='fill';fill.style.width=(100*value)+'%';track.append(fill);row.append(label,track);root.append(row)}document.getElementById('chartnote').textContent=charts[kind].note;document.querySelectorAll('[data-chart]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.chart===kind)))}
+document.querySelectorAll('[data-chart]').forEach(b=>b.onclick=()=>draw(b.dataset.chart));draw('telco');
+document.querySelectorAll('[data-filter]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-filter]').forEach(x=>{const active=x===b;x.classList.toggle('active',active);x.setAttribute('aria-pressed',String(active))});document.querySelectorAll('[data-category]').forEach(c=>c.hidden=b.dataset.filter!=='all'&&c.dataset.category!==b.dataset.filter)});
+const labels=['Jours actifs / 7','Jours actifs / 30','Jours depuis activité','Unités / 7 jours','Unités / 30 jours','Part récente (0–1)'];const defaults=[1,8,5,10,120,10/120];
+ARTIFACT.features.forEach((f,i)=>{const label=document.createElement('label');label.textContent=labels[i];const input=document.createElement('input');input.id=f;input.type='number';input.step='any';input.min=0;input.value=defaults[i];input.oninput=score;label.append(input);document.getElementById('inputs').append(label)});
+function score(){const x=ARTIFACT.features.map(f=>Number(document.getElementById(f).value));const output=document.getElementById('score');const status=document.getElementById('scorelabel');if(x.some(v=>!Number.isFinite(v)||v<0)||x[0]>7||x[1]>30||x[0]>x[1]||x[2]>30||x[3]>x[4]||x[5]>1){output.textContent='—';status.textContent='Valeurs incohérentes : vérifie les fenêtres et bornes.';return}const z=x.reduce((s,v,i)=>s+(v-ARTIFACT.mean[i])/ARTIFACT.scale[i]*ARTIFACT.coef[i],ARTIFACT.intercept);const prob=1/(1+Math.exp(-Math.max(-700,Math.min(700,z))));output.textContent=(prob*100).toFixed(1)+' %';status.textContent=(prob>=ARTIFACT.threshold?'Au-dessus':'En dessous')+' du seuil de validation '+ARTIFACT.threshold.toFixed(2)+' · modèle logistique · données synthétiques'}score();
+</script></body></html>

@@ -1,0 +1,996 @@
+{
+  "data_origin": "authored_demo_runbooks_and_queries",
+  "corpus_chunks": 18,
+  "threshold": 0.15000000000000002,
+  "threshold_selection": "development_answerability_accuracy; lowest threshold on ties",
+  "development_cases": 8,
+  "test_cases": 24,
+  "limitations": [
+    "Small authored benchmark; not independently collected",
+    "Character TF-IDF is lexical, not a neural embedding",
+    "Extractive responses; no LLM generation",
+    "No proof of semantic correctness from cosine similarity"
+  ],
+  "test": {
+    "bm25": {
+      "mrr_at_3": 0.8425925925925926,
+      "recall_at_3": 0.9444444444444444,
+      "answerability_accuracy": 0.9166666666666666,
+      "negative_abstention_rate": 0.6666666666666666,
+      "positive_coverage": 1.0,
+      "cases": [
+        {
+          "query": "Pourquoi un event_id identique avec contenu différent doit être rejeté ?",
+          "relevant_sources": [
+            "ingestion.md"
+          ],
+          "retrieved_sources": [
+            "ingestion.md",
+            "security.md",
+            "retrieval.md"
+          ],
+          "status": "answered",
+          "confidence": 0.4406122843686913,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Que faire des valeurs négatives dans les imports ?",
+          "relevant_sources": [
+            "ingestion.md"
+          ],
+          "retrieved_sources": [
+            "drift.md",
+            "reproducibility.md",
+            "retrieval.md"
+          ],
+          "status": "answered",
+          "confidence": 0.2598936326441005,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Quelles dates utiliser pour calculer les variables prédictives ?",
+          "relevant_sources": [
+            "features.md"
+          ],
+          "retrieved_sources": [
+            "drift.md",
+            "mri.md",
+            "features.md"
+          ],
+          "status": "answered",
+          "confidence": 0.4135559278441481,
+          "first_relevant_rank": 3
+        },
+        {
+          "query": "Pourquoi faut-il une couverture complète avant le label ?",
+          "relevant_sources": [
+            "features.md"
+          ],
+          "retrieved_sources": [
+            "features.md",
+            "security.md"
+          ],
+          "status": "answered",
+          "confidence": 0.4568059197036366,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quelles métriques pour les classes rares ?",
+          "relevant_sources": [
+            "metrics.md"
+          ],
+          "retrieved_sources": [
+            "metrics.md",
+            "drift.md",
+            "reproducibility.md"
+          ],
+          "status": "answered",
+          "confidence": 0.3139658623635019,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Peut-on régler le seuil sur le test final ?",
+          "relevant_sources": [
+            "metrics.md"
+          ],
+          "retrieved_sources": [
+            "metrics.md",
+            "citations.md",
+            "metrics.md"
+          ],
+          "status": "answered",
+          "confidence": 0.27522574108460723,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Que mesure le Population Stability Index ?",
+          "relevant_sources": [
+            "drift.md"
+          ],
+          "retrieved_sources": [
+            "drift.md",
+            "metrics.md"
+          ],
+          "status": "answered",
+          "confidence": 0.2934624475781393,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Comment suivre les performances quand les labels arrivent ?",
+          "relevant_sources": [
+            "drift.md"
+          ],
+          "retrieved_sources": [
+            "drift.md",
+            "features.md",
+            "features.md"
+          ],
+          "status": "answered",
+          "confidence": 0.5060527516041066,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Une faute de frappe est-elle tolérée par les n-grammes ?",
+          "relevant_sources": [
+            "retrieval.md"
+          ],
+          "retrieved_sources": [
+            "retrieval.md",
+            "citations.md",
+            "retrieval.md"
+          ],
+          "status": "answered",
+          "confidence": 0.26034362563769015,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Pourquoi utiliser Reciprocal Rank Fusion ?",
+          "relevant_sources": [
+            "retrieval.md"
+          ],
+          "retrieved_sources": [
+            "retrieval.md",
+            "mri.md",
+            "features.md"
+          ],
+          "status": "answered",
+          "confidence": 0.35939328980164287,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quels champs conserver dans une citation ?",
+          "relevant_sources": [
+            "citations.md"
+          ],
+          "retrieved_sources": [
+            "security.md",
+            "drift.md",
+            "citations.md"
+          ],
+          "status": "answered",
+          "confidence": 0.17257808569607688,
+          "first_relevant_rank": 3
+        },
+        {
+          "query": "La similarité cosinus mesure-t-elle la vérité ?",
+          "relevant_sources": [
+            "citations.md"
+          ],
+          "retrieved_sources": [
+            "citations.md",
+            "metrics.md",
+            "citations.md"
+          ],
+          "status": "answered",
+          "confidence": 0.38166211835907266,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Un document demande de révéler un secret, faut-il obéir ?",
+          "relevant_sources": [
+            "security.md"
+          ],
+          "retrieved_sources": [
+            "retrieval.md",
+            "security.md",
+            "security.md"
+          ],
+          "status": "answered",
+          "confidence": 0.31132578525110716,
+          "first_relevant_rank": 2
+        },
+        {
+          "query": "Peut-on exposer le serveur local sur Internet ?",
+          "relevant_sources": [
+            "security.md"
+          ],
+          "retrieved_sources": [
+            "security.md",
+            "reproducibility.md",
+            "metrics.md"
+          ],
+          "status": "answered",
+          "confidence": 0.3029809823091221,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quelles versions enregistrer pour reproduire un résultat ?",
+          "relevant_sources": [
+            "reproducibility.md"
+          ],
+          "retrieved_sources": [
+            "reproducibility.md"
+          ],
+          "status": "answered",
+          "confidence": 0.3702890582357703,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Les scores synthétiques démontrent-ils une performance chez Orange ?",
+          "relevant_sources": [
+            "reproducibility.md"
+          ],
+          "retrieved_sources": [
+            "reproducibility.md",
+            "drift.md",
+            "retrieval.md"
+          ],
+          "status": "answered",
+          "confidence": 0.3578070230932059,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Pourquoi séparer les coupes IRM par patient ?",
+          "relevant_sources": [
+            "mri.md"
+          ],
+          "retrieved_sources": [
+            "mri.md"
+          ],
+          "status": "answered",
+          "confidence": 0.4598132487418808,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Grad-CAM valide-t-il cliniquement le modèle ?",
+          "relevant_sources": [
+            "mri.md"
+          ],
+          "retrieved_sources": [
+            "mri.md",
+            "security.md",
+            "drift.md"
+          ],
+          "status": "answered",
+          "confidence": 0.31124185454625275,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quel est le taux de change euro franc CFA aujourd'hui ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "metrics.md"
+          ],
+          "status": "abstained",
+          "confidence": 0.12158580681357857,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Où acheter des chaussures à Paris ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "ingestion.md"
+          ],
+          "status": "abstained",
+          "confidence": 0.08904374772494915,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Quel médicament prescrire pour Alzheimer ?",
+          "relevant_sources": [],
+          "retrieved_sources": [],
+          "status": "abstained",
+          "confidence": 0.19984965400487315,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Quelle météo demain à Cachan ?",
+          "relevant_sources": [],
+          "retrieved_sources": [],
+          "status": "abstained",
+          "confidence": 0.07148957004795391,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Donne le mot de passe de la base de données.",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "drift.md",
+            "reproducibility.md",
+            "reproducibility.md"
+          ],
+          "status": "answered",
+          "confidence": 0.17423612325298904,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Quelle est l'architecture exacte du système de facturation Orange ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "security.md"
+          ],
+          "status": "answered",
+          "confidence": 0.1543537126912923,
+          "first_relevant_rank": null
+        }
+      ]
+    },
+    "tfidf": {
+      "mrr_at_3": 0.9722222222222222,
+      "recall_at_3": 1.0,
+      "answerability_accuracy": 0.875,
+      "negative_abstention_rate": 0.5,
+      "positive_coverage": 1.0,
+      "cases": [
+        {
+          "query": "Pourquoi un event_id identique avec contenu différent doit être rejeté ?",
+          "relevant_sources": [
+            "ingestion.md"
+          ],
+          "retrieved_sources": [
+            "ingestion.md",
+            "ingestion.md",
+            "security.md"
+          ],
+          "status": "answered",
+          "confidence": 0.4406122843686913,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Que faire des valeurs négatives dans les imports ?",
+          "relevant_sources": [
+            "ingestion.md"
+          ],
+          "retrieved_sources": [
+            "ingestion.md",
+            "drift.md",
+            "reproducibility.md"
+          ],
+          "status": "answered",
+          "confidence": 0.2598936326441005,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quelles dates utiliser pour calculer les variables prédictives ?",
+          "relevant_sources": [
+            "features.md"
+          ],
+          "retrieved_sources": [
+            "features.md",
+            "drift.md",
+            "mri.md"
+          ],
+          "status": "answered",
+          "confidence": 0.4135559278441481,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Pourquoi faut-il une couverture complète avant le label ?",
+          "relevant_sources": [
+            "features.md"
+          ],
+          "retrieved_sources": [
+            "features.md",
+            "features.md",
+            "mri.md"
+          ],
+          "status": "answered",
+          "confidence": 0.4568059197036366,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quelles métriques pour les classes rares ?",
+          "relevant_sources": [
+            "metrics.md"
+          ],
+          "retrieved_sources": [
+            "metrics.md",
+            "retrieval.md",
+            "reproducibility.md"
+          ],
+          "status": "answered",
+          "confidence": 0.3139658623635019,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Peut-on régler le seuil sur le test final ?",
+          "relevant_sources": [
+            "metrics.md"
+          ],
+          "retrieved_sources": [
+            "metrics.md",
+            "citations.md",
+            "metrics.md"
+          ],
+          "status": "answered",
+          "confidence": 0.27522574108460723,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Que mesure le Population Stability Index ?",
+          "relevant_sources": [
+            "drift.md"
+          ],
+          "retrieved_sources": [
+            "drift.md",
+            "metrics.md",
+            "mri.md"
+          ],
+          "status": "answered",
+          "confidence": 0.2934624475781393,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Comment suivre les performances quand les labels arrivent ?",
+          "relevant_sources": [
+            "drift.md"
+          ],
+          "retrieved_sources": [
+            "drift.md",
+            "drift.md",
+            "features.md"
+          ],
+          "status": "answered",
+          "confidence": 0.5060527516041066,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Une faute de frappe est-elle tolérée par les n-grammes ?",
+          "relevant_sources": [
+            "retrieval.md"
+          ],
+          "retrieved_sources": [
+            "retrieval.md",
+            "drift.md",
+            "reproducibility.md"
+          ],
+          "status": "answered",
+          "confidence": 0.26034362563769015,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Pourquoi utiliser Reciprocal Rank Fusion ?",
+          "relevant_sources": [
+            "retrieval.md"
+          ],
+          "retrieved_sources": [
+            "retrieval.md",
+            "features.md",
+            "citations.md"
+          ],
+          "status": "answered",
+          "confidence": 0.35939328980164287,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quels champs conserver dans une citation ?",
+          "relevant_sources": [
+            "citations.md"
+          ],
+          "retrieved_sources": [
+            "drift.md",
+            "citations.md",
+            "security.md"
+          ],
+          "status": "answered",
+          "confidence": 0.17257808569607688,
+          "first_relevant_rank": 2
+        },
+        {
+          "query": "La similarité cosinus mesure-t-elle la vérité ?",
+          "relevant_sources": [
+            "citations.md"
+          ],
+          "retrieved_sources": [
+            "citations.md",
+            "metrics.md",
+            "features.md"
+          ],
+          "status": "answered",
+          "confidence": 0.38166211835907266,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Un document demande de révéler un secret, faut-il obéir ?",
+          "relevant_sources": [
+            "security.md"
+          ],
+          "retrieved_sources": [
+            "security.md",
+            "retrieval.md",
+            "ingestion.md"
+          ],
+          "status": "answered",
+          "confidence": 0.31132578525110716,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Peut-on exposer le serveur local sur Internet ?",
+          "relevant_sources": [
+            "security.md"
+          ],
+          "retrieved_sources": [
+            "security.md",
+            "mri.md",
+            "metrics.md"
+          ],
+          "status": "answered",
+          "confidence": 0.3029809823091221,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quelles versions enregistrer pour reproduire un résultat ?",
+          "relevant_sources": [
+            "reproducibility.md"
+          ],
+          "retrieved_sources": [
+            "reproducibility.md",
+            "features.md",
+            "metrics.md"
+          ],
+          "status": "answered",
+          "confidence": 0.3702890582357703,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Les scores synthétiques démontrent-ils une performance chez Orange ?",
+          "relevant_sources": [
+            "reproducibility.md"
+          ],
+          "retrieved_sources": [
+            "reproducibility.md",
+            "drift.md",
+            "drift.md"
+          ],
+          "status": "answered",
+          "confidence": 0.3578070230932059,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Pourquoi séparer les coupes IRM par patient ?",
+          "relevant_sources": [
+            "mri.md"
+          ],
+          "retrieved_sources": [
+            "mri.md",
+            "metrics.md",
+            "drift.md"
+          ],
+          "status": "answered",
+          "confidence": 0.4598132487418808,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Grad-CAM valide-t-il cliniquement le modèle ?",
+          "relevant_sources": [
+            "mri.md"
+          ],
+          "retrieved_sources": [
+            "mri.md",
+            "security.md",
+            "ingestion.md"
+          ],
+          "status": "answered",
+          "confidence": 0.31124185454625275,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quel est le taux de change euro franc CFA aujourd'hui ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "drift.md",
+            "metrics.md",
+            "citations.md"
+          ],
+          "status": "abstained",
+          "confidence": 0.12158580681357857,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Où acheter des chaussures à Paris ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "metrics.md",
+            "reproducibility.md",
+            "features.md"
+          ],
+          "status": "abstained",
+          "confidence": 0.08904374772494915,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Quel médicament prescrire pour Alzheimer ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "mri.md",
+            "features.md",
+            "metrics.md"
+          ],
+          "status": "answered",
+          "confidence": 0.19984965400487315,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Quelle météo demain à Cachan ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "drift.md",
+            "security.md",
+            "citations.md"
+          ],
+          "status": "abstained",
+          "confidence": 0.07148957004795391,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Donne le mot de passe de la base de données.",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "drift.md",
+            "security.md",
+            "reproducibility.md"
+          ],
+          "status": "answered",
+          "confidence": 0.17423612325298904,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Quelle est l'architecture exacte du système de facturation Orange ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "security.md",
+            "features.md",
+            "mri.md"
+          ],
+          "status": "answered",
+          "confidence": 0.1543537126912923,
+          "first_relevant_rank": null
+        }
+      ]
+    },
+    "hybrid": {
+      "mrr_at_3": 0.8518518518518517,
+      "recall_at_3": 0.9444444444444444,
+      "answerability_accuracy": 0.875,
+      "negative_abstention_rate": 0.5,
+      "positive_coverage": 1.0,
+      "cases": [
+        {
+          "query": "Pourquoi un event_id identique avec contenu différent doit être rejeté ?",
+          "relevant_sources": [
+            "ingestion.md"
+          ],
+          "retrieved_sources": [
+            "ingestion.md",
+            "security.md",
+            "ingestion.md"
+          ],
+          "status": "answered",
+          "confidence": 0.4406122843686913,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Que faire des valeurs négatives dans les imports ?",
+          "relevant_sources": [
+            "ingestion.md"
+          ],
+          "retrieved_sources": [
+            "drift.md",
+            "reproducibility.md",
+            "retrieval.md"
+          ],
+          "status": "answered",
+          "confidence": 0.2598936326441005,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Quelles dates utiliser pour calculer les variables prédictives ?",
+          "relevant_sources": [
+            "features.md"
+          ],
+          "retrieved_sources": [
+            "drift.md",
+            "features.md",
+            "mri.md"
+          ],
+          "status": "answered",
+          "confidence": 0.4135559278441481,
+          "first_relevant_rank": 2
+        },
+        {
+          "query": "Pourquoi faut-il une couverture complète avant le label ?",
+          "relevant_sources": [
+            "features.md"
+          ],
+          "retrieved_sources": [
+            "features.md",
+            "security.md",
+            "features.md"
+          ],
+          "status": "answered",
+          "confidence": 0.4568059197036366,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quelles métriques pour les classes rares ?",
+          "relevant_sources": [
+            "metrics.md"
+          ],
+          "retrieved_sources": [
+            "metrics.md",
+            "drift.md",
+            "reproducibility.md"
+          ],
+          "status": "answered",
+          "confidence": 0.3139658623635019,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Peut-on régler le seuil sur le test final ?",
+          "relevant_sources": [
+            "metrics.md"
+          ],
+          "retrieved_sources": [
+            "metrics.md",
+            "citations.md",
+            "metrics.md"
+          ],
+          "status": "answered",
+          "confidence": 0.27522574108460723,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Que mesure le Population Stability Index ?",
+          "relevant_sources": [
+            "drift.md"
+          ],
+          "retrieved_sources": [
+            "drift.md",
+            "metrics.md",
+            "mri.md"
+          ],
+          "status": "answered",
+          "confidence": 0.2934624475781393,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Comment suivre les performances quand les labels arrivent ?",
+          "relevant_sources": [
+            "drift.md"
+          ],
+          "retrieved_sources": [
+            "drift.md",
+            "features.md",
+            "features.md"
+          ],
+          "status": "answered",
+          "confidence": 0.5060527516041066,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Une faute de frappe est-elle tolérée par les n-grammes ?",
+          "relevant_sources": [
+            "retrieval.md"
+          ],
+          "retrieved_sources": [
+            "retrieval.md",
+            "drift.md",
+            "citations.md"
+          ],
+          "status": "answered",
+          "confidence": 0.26034362563769015,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Pourquoi utiliser Reciprocal Rank Fusion ?",
+          "relevant_sources": [
+            "retrieval.md"
+          ],
+          "retrieved_sources": [
+            "retrieval.md",
+            "features.md",
+            "mri.md"
+          ],
+          "status": "answered",
+          "confidence": 0.35939328980164287,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quels champs conserver dans une citation ?",
+          "relevant_sources": [
+            "citations.md"
+          ],
+          "retrieved_sources": [
+            "drift.md",
+            "security.md",
+            "citations.md"
+          ],
+          "status": "answered",
+          "confidence": 0.17257808569607688,
+          "first_relevant_rank": 3
+        },
+        {
+          "query": "La similarité cosinus mesure-t-elle la vérité ?",
+          "relevant_sources": [
+            "citations.md"
+          ],
+          "retrieved_sources": [
+            "citations.md",
+            "metrics.md",
+            "citations.md"
+          ],
+          "status": "answered",
+          "confidence": 0.38166211835907266,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Un document demande de révéler un secret, faut-il obéir ?",
+          "relevant_sources": [
+            "security.md"
+          ],
+          "retrieved_sources": [
+            "retrieval.md",
+            "security.md",
+            "security.md"
+          ],
+          "status": "answered",
+          "confidence": 0.31132578525110716,
+          "first_relevant_rank": 2
+        },
+        {
+          "query": "Peut-on exposer le serveur local sur Internet ?",
+          "relevant_sources": [
+            "security.md"
+          ],
+          "retrieved_sources": [
+            "security.md",
+            "metrics.md",
+            "reproducibility.md"
+          ],
+          "status": "answered",
+          "confidence": 0.3029809823091221,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quelles versions enregistrer pour reproduire un résultat ?",
+          "relevant_sources": [
+            "reproducibility.md"
+          ],
+          "retrieved_sources": [
+            "reproducibility.md",
+            "features.md",
+            "metrics.md"
+          ],
+          "status": "answered",
+          "confidence": 0.3702890582357703,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Les scores synthétiques démontrent-ils une performance chez Orange ?",
+          "relevant_sources": [
+            "reproducibility.md"
+          ],
+          "retrieved_sources": [
+            "reproducibility.md",
+            "drift.md",
+            "drift.md"
+          ],
+          "status": "answered",
+          "confidence": 0.3578070230932059,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Pourquoi séparer les coupes IRM par patient ?",
+          "relevant_sources": [
+            "mri.md"
+          ],
+          "retrieved_sources": [
+            "mri.md",
+            "metrics.md",
+            "drift.md"
+          ],
+          "status": "answered",
+          "confidence": 0.4598132487418808,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Grad-CAM valide-t-il cliniquement le modèle ?",
+          "relevant_sources": [
+            "mri.md"
+          ],
+          "retrieved_sources": [
+            "mri.md",
+            "security.md",
+            "drift.md"
+          ],
+          "status": "answered",
+          "confidence": 0.31124185454625275,
+          "first_relevant_rank": 1
+        },
+        {
+          "query": "Quel est le taux de change euro franc CFA aujourd'hui ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "metrics.md",
+            "drift.md",
+            "citations.md"
+          ],
+          "status": "abstained",
+          "confidence": 0.12158580681357857,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Où acheter des chaussures à Paris ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "ingestion.md",
+            "metrics.md",
+            "reproducibility.md"
+          ],
+          "status": "abstained",
+          "confidence": 0.08904374772494915,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Quel médicament prescrire pour Alzheimer ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "mri.md",
+            "features.md",
+            "metrics.md"
+          ],
+          "status": "answered",
+          "confidence": 0.19984965400487315,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Quelle météo demain à Cachan ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "drift.md",
+            "security.md",
+            "citations.md"
+          ],
+          "status": "abstained",
+          "confidence": 0.07148957004795391,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Donne le mot de passe de la base de données.",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "drift.md",
+            "reproducibility.md",
+            "reproducibility.md"
+          ],
+          "status": "answered",
+          "confidence": 0.17423612325298904,
+          "first_relevant_rank": null
+        },
+        {
+          "query": "Quelle est l'architecture exacte du système de facturation Orange ?",
+          "relevant_sources": [],
+          "retrieved_sources": [
+            "security.md",
+            "features.md",
+            "mri.md"
+          ],
+          "status": "answered",
+          "confidence": 0.1543537126912923,
+          "first_relevant_rank": null
+        }
+      ]
+    }
+  },
+  "corpus_sha256": "5d27370e7fed607d9bb70122052a74b6aa7846674c5fee596d068e4eb489f228"
+}

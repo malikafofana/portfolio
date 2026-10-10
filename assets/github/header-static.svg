@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+<title id="title">Malika Fofana — AI &amp; Data Engineer, Software Developer</title><desc id="desc">From reliable data to intelligent products. Applied machine learning, data engineering and full-stack development.</desc>
+<defs><linearGradient id="bg"><stop stop-color="#10192e"/><stop offset="1" stop-color="#19263e"/></linearGradient><linearGradient id="line"><stop stop-color="#84e8cf"/><stop offset="1" stop-color="#b5a4ff"/></linearGradient><pattern id="dots" width="30" height="30" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="#72859f" opacity=".25"/></pattern></defs>
+<rect width="1200" height="360" rx="24" fill="url(#bg)"/><rect width="1200" height="360" rx="24" fill="url(#dots)"/>
+<path d="M815 85L935 160 1070 90 1110 235 940 278 815 85M935 160L940 278M935 160L1110 235" fill="none" stroke="url(#line)" stroke-width="2" opacity=".7"/>
+<g fill="#84e8cf"><circle cx="815" cy="85" r="7"/><circle cx="935" cy="160" r="12"/><circle cx="1070" cy="90" r="7"/><circle cx="1110" cy="235" r="9"/><circle cx="940" cy="278" r="7"/></g>
+<text x="60" y="70" font-family="Arial,sans-serif" font-size="14" letter-spacing="4" fill="#84e8cf">BUILD · MEASURE · UNDERSTAND</text>
+<text x="60" y="157" font-family="Arial,sans-serif" font-size="60" font-weight="700" fill="#f0f5fd">Malika Fofana</text>
+<text x="60" y="205" font-family="Arial,sans-serif" font-size="27" fill="#b5c6de">AI &amp; Data Engineer · Software Developer</text>
+<text x="60" y="271" font-family="Arial,sans-serif" font-size="18" fill="#9aacc7">From reliable data to intelligent products.</text>
+<rect x="60" y="303" width="70" height="3" rx="1.5" fill="#84e8cf"/>
+</svg>

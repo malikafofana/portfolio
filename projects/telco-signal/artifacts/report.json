@@ -1,0 +1,249 @@
+{
+  "origin": {
+    "customers": 600,
+    "days": 240,
+    "seed": 42,
+    "data_origin": "synthetic_markov_process"
+  },
+  "runtime": {
+    "python": "3.12.14",
+    "sklearn": "1.8.0",
+    "numpy": "2.3.5",
+    "pandas": "2.2.3"
+  },
+  "quality": {
+    "inserted": 46578,
+    "duplicates": 10,
+    "rejected": 2,
+    "sha256": "b1956bf25fd7065faa6aa2173ff9ff5df152ff76713438e7a28550271b4a6f0d"
+  },
+  "replay": {
+    "inserted": 0,
+    "duplicates": 46588,
+    "rejected": 2,
+    "sha256": "b1956bf25fd7065faa6aa2173ff9ff5df152ff76713438e7a28550271b4a6f0d"
+  },
+  "selection": "logistic",
+  "models": {
+    "dummy": {
+      "validation": {
+        "pr_auc": 0.31166666666666665,
+        "brier": 0.21553333333333333,
+        "f1": 0.47522236340533675,
+        "precision": 0.31166666666666665,
+        "recall": 1.0,
+        "threshold": 0.1
+      },
+      "test": {
+        "pr_auc": 0.3233333333333333,
+        "brier": 0.22066666666666662,
+        "f1": 0.48866498740554154,
+        "precision": 0.3233333333333333,
+        "recall": 1.0,
+        "threshold": 0.1
+      }
+    },
+    "logistic": {
+      "validation": {
+        "pr_auc": 0.7465427622871222,
+        "brier": 0.09420770452088886,
+        "f1": 0.8317757009345794,
+        "precision": 0.7385892116182573,
+        "recall": 0.9518716577540107,
+        "threshold": 0.35
+      },
+      "test": {
+        "pr_auc": 0.6275472479233434,
+        "brier": 0.1392451725267343,
+        "f1": 0.7317073170731707,
+        "precision": 0.642023346303502,
+        "recall": 0.8505154639175257,
+        "threshold": 0.35
+      }
+    },
+    "forest": {
+      "validation": {
+        "pr_auc": 0.7395544595517923,
+        "brier": 0.0952520533895242,
+        "f1": 0.827906976744186,
+        "precision": 0.7325102880658436,
+        "recall": 0.9518716577540107,
+        "threshold": 0.4
+      },
+      "test": {
+        "pr_auc": 0.6246924014298559,
+        "brier": 0.1397632020913584,
+        "f1": 0.7328918322295805,
+        "precision": 0.640926640926641,
+        "recall": 0.8556701030927835,
+        "threshold": 0.4
+      }
+    }
+  },
+  "split": {
+    "train_cutoff_days": [
+      60,
+      90,
+      120
+    ],
+    "validation_cutoff_day": 150,
+    "test_cutoff_day": 180,
+    "target_horizon_days": 30,
+    "same_customers_over_time": true
+  },
+  "prevalence": {
+    "train": 0.28,
+    "validation": 0.31166666666666665,
+    "test": 0.3233333333333333
+  },
+  "psi": {
+    "active_days_7": 0.021731025295053937,
+    "active_days_30": 0.035345433922094355,
+    "days_since_activity": 0.03832583145206814,
+    "units_7": 0.017171683701095404,
+    "units_30": 0.03397406081964456,
+    "recent_share": 0.022985456685223234
+  },
+  "top_scores": [
+    {
+      "customer_id": "SYN-00132",
+      "cutoff": "2025-06-30",
+      "risk": 0.77604,
+      "actual": 0,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00427",
+      "cutoff": "2025-06-30",
+      "risk": 0.7728,
+      "actual": 0,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00265",
+      "cutoff": "2025-06-30",
+      "risk": 0.76284,
+      "actual": 0,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00455",
+      "cutoff": "2025-06-30",
+      "risk": 0.7534,
+      "actual": 1,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00246",
+      "cutoff": "2025-06-30",
+      "risk": 0.75281,
+      "actual": 1,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00215",
+      "cutoff": "2025-06-30",
+      "risk": 0.75105,
+      "actual": 0,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00071",
+      "cutoff": "2025-06-30",
+      "risk": 0.74892,
+      "actual": 1,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00577",
+      "cutoff": "2025-06-30",
+      "risk": 0.74883,
+      "actual": 0,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00152",
+      "cutoff": "2025-06-30",
+      "risk": 0.74759,
+      "actual": 1,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00040",
+      "cutoff": "2025-06-30",
+      "risk": 0.74745,
+      "actual": 0,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00444",
+      "cutoff": "2025-06-30",
+      "risk": 0.74356,
+      "actual": 1,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00234",
+      "cutoff": "2025-06-30",
+      "risk": 0.73319,
+      "actual": 1,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00222",
+      "cutoff": "2025-06-30",
+      "risk": 0.73137,
+      "actual": 1,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00002",
+      "cutoff": "2025-06-30",
+      "risk": 0.73056,
+      "actual": 1,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00517",
+      "cutoff": "2025-06-30",
+      "risk": 0.72935,
+      "actual": 1,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00187",
+      "cutoff": "2025-06-30",
+      "risk": 0.72861,
+      "actual": 1,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00144",
+      "cutoff": "2025-06-30",
+      "risk": 0.72344,
+      "actual": 1,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00039",
+      "cutoff": "2025-06-30",
+      "risk": 0.7232,
+      "actual": 1,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00522",
+      "cutoff": "2025-06-30",
+      "risk": 0.72317,
+      "actual": 0,
+      "flagged": 1
+    },
+    {
+      "customer_id": "SYN-00505",
+      "cutoff": "2025-06-30",
+      "risk": 0.71969,
+      "actual": 0,
+      "flagged": 1
+    }
+  ]
+}
