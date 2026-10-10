@@ -6,6 +6,8 @@
 
 **Machine Learning · Data Engineering · AI Applications · Full-stack Development**
 
+[![Engineering checks](https://github.com/malikafofana/portfolio/actions/workflows/engineering-checks.yml/badge.svg)](https://github.com/malikafofana/portfolio/actions/workflows/engineering-checks.yml)
+
 </div>
 
 ## Building across the whole system
@@ -63,3 +65,4 @@ I'm interested in opportunities where I can contribute to **AI systems, data pla
 **Build something useful. Understand why it works. Be precise about its limits.**
 
 </div>
+
