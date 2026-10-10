@@ -1,6 +1,0 @@
-__pycache__/
-.venv/
-artifacts/*.csv
-artifacts/*.sqlite
-artifacts/quarantine.json
-.DS_Store
