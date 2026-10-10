@@ -1,6 +1,6 @@
 <div align="center">
 
-![Malika Fofana — AI & Data Engineer · Software Developer](https://raw.githubusercontent.com/malikafofana/portfolio/main/assets/github/header-motion.gif)
+![Malika Fofana — AI & Data Engineer · Software Developer](https://raw.githubusercontent.com/malikafofana/portfolio/main/assets/github/header-motion.gif?v=portfolio-da)
 
 [Portfolio](https://malikafofana.github.io/portfolio/) · [Engineering Lab](https://malikafofana.github.io/portfolio/technical.html) · [LinkedIn](https://www.linkedin.com/in/malika-fofana/)
 
@@ -65,4 +65,3 @@ I'm interested in opportunities where I can contribute to **AI systems, data pla
 **Build something useful. Understand why it works. Be precise about its limits.**
 
 </div>
-
