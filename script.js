@@ -327,7 +327,8 @@ function step(){
   ctx.clearRect(0, 0, W, H);
 
   const heroH = window.innerHeight * 1.05;
-  const fade = Math.max(0, 1 - (window.scrollY / heroH));
+  const fade = Math.max(0.12, 1 - (window.scrollY / heroH));
+  if (document.hidden || prefersReducedMotion) return;
   if (fade <= 0.01){
     requestAnimationFrame(step);
     return;
@@ -389,7 +390,10 @@ window.addEventListener('mouseleave', () => { mouse.active = false; });
 window.addEventListener('resize', resize);
 
 resize();
-requestAnimationFrame(step);
+if (!prefersReducedMotion) requestAnimationFrame(step);
+document.addEventListener('visibilitychange', () => {
+  if (!document.hidden && !prefersReducedMotion) requestAnimationFrame(step);
+});
 
 /* ===================== DELIGHT: TILT, MAGNETIC, RIPPLE ===================== */
 const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -438,3 +442,4 @@ document.querySelectorAll('.nav-cta, .browser-mock, .contact-links a').forEach(e
   el.classList.add('ripple-wrap');
   el.addEventListener('click', (e) => addRipple(e, el));
 });
+
