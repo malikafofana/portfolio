@@ -199,3 +199,9 @@ html.brain-intro-playing .hero-visual .brain-wrap{visibility:hidden;}
  .hero-label{margin-bottom:12px;}.hero-name{margin-bottom:12px;}
  .brain-entry-scroll .hero-visual{max-width:65svh;justify-self:center;}
 }
+
+/* Two roles, written in turn without moving the surrounding content. */
+.hero-name .role{background:none;color:var(--blue-glow);font-weight:400;text-transform:none;letter-spacing:0;animation:none;opacity:1;font-size:clamp(18px,2vw,25px);line-height:1.5;min-height:1.5em;}
+.role-cursor{display:inline-block;height:1em;border-left:2px solid currentColor;margin-left:3px;vertical-align:-.1em;animation:role-caret 1s steps(1) infinite;}
+@keyframes role-caret{50%{opacity:0;}}
+@media(prefers-reduced-motion:reduce){.role-cursor{display:none;}}
