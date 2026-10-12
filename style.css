@@ -618,7 +618,7 @@ p{ margin: 0; }
 .t-card:hover .browser-mock-overlay{ opacity: 1; }
 .browser-mock-overlay span{ padding-bottom: 10px; }
 
-@media (max-width: 780px){
+@media (max-width: 1100px){
   .t-line{ left: 20px; } .t-line-progress{ left: 20px; } .t-traveler{ left: 20px; }
   .t-entry, .t-entry[data-side="left"], .t-entry[data-side="right"]{ width: 100%; left: 0; text-align: left; padding: 0 20px 36px 52px; }
   .t-entry[data-side="left"] .t-dot, .t-entry[data-side="right"] .t-dot{ left: 13px; right: auto; }
