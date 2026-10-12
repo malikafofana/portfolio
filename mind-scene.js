@@ -20,10 +20,9 @@
    const el=lane.firstElementChild;el.replaceChildren();el.className='mind-item mind-'+item.type+' mind-slot-'+index;
    if(item.text){const pre=document.createElement('pre');pre.textContent=item.text;el.appendChild(pre);}
    else if(item.type==='book'){
-    const cover=document.createElement('div');cover.className='mind-book-cover';
-    const author=document.createElement('span');author.className='mind-book-author';author.textContent=item[lang][0];
-    const title=document.createElement('strong');title.textContent=item[lang][1];
-    const year=document.createElement('small');year.textContent=item[lang][2];cover.append(author,title,year);el.appendChild(cover);
+    const line=document.createElement('p');line.className='mind-book-reference';
+    const title=document.createElement('u');title.textContent=item[lang][1];
+    line.append(title,document.createTextNode(', '+item[lang][0]));el.appendChild(line);
    }else if(item.type==='fact'){
     const year=document.createElement('strong');year.className='mind-history-year';year.textContent=item[lang][0];
     const event=document.createElement('p');event.textContent=item[lang][1];

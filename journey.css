@@ -171,3 +171,37 @@ html.brain-intro-playing .hero-visual .brain-wrap{visibility:hidden;}
 .brain-intro-visual{width:min(78vw,580px);}
 .brain-exit-visual .brain-volume{width:100%;height:100%;}
 @media(max-width:680px){.brain-intro-visual{width:min(94vw,460px);}.brain-entry-scroll .hero-visual{width:clamp(250px,68vw,380px);}}
+
+/* Plain book references, moving within the existing separate lanes. */
+.mind-book-reference{margin:0;font:italic 18px/1.6 var(--font-formula);}
+.mind-book-reference u{text-underline-offset:4px;text-decoration-thickness:1px;}
+.hero-inner,.manifesto-copy,.t-card,.skill-group{min-width:0;overflow-wrap:break-word;}
+@media(min-width:681px) and (max-width:1180px){
+ .brain-entry-scroll .hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:20px;padding:90px 5vw 35px;align-content:center;}
+ .brain-entry-scroll .hero-inner{width:100%;max-width:none;}
+ .brain-entry-scroll .hero-visual{position:relative;top:auto;right:auto;order:0;align-self:center;margin:0;width:100%;max-width:440px;}
+ .hero-name .script{font-size:clamp(48px,6.5vw,76px);}
+ .hero-name .role{font-size:clamp(15px,1.8vw,21px);}
+ .hero-tagline{font-size:17px;}
+ .hero-label{font-size:9px;gap:10px;flex-wrap:wrap;}
+}
+@media(max-width:1100px){
+ .t-line,#t-line-progress{left:26px;}
+ .t-entry,.t-entry[data-side="left"],.t-entry[data-side="right"]{width:100%;left:0;text-align:left;padding:0 24px 36px 56px;}
+ .t-entry .t-dot{left:20px;right:auto;}
+ .t-entry .t-card,.t-entry-wide .t-card{width:100%;max-width:760px;}
+}
+@media(max-width:680px){
+ .brain-entry-scroll .hero{gap:12px;justify-content:center;padding:76px 6vw 24px;}
+ .brain-entry-scroll .hero-visual{width:min(64vw,30svh);min-width:0;flex-shrink:0;align-self:center;margin:0 auto;}
+ .hero-name .script{font-size:clamp(40px,10vw,62px);}
+ .hero-label{letter-spacing:.1em;gap:9px;margin-bottom:16px;}
+ .hero-tagline{font-size:15px;}
+ .mind-book-reference{font-size:14px;}
+ .skill-group{min-width:0;}
+}
+@media(max-height:600px) and (min-width:681px){
+ .brain-entry-scroll .hero{padding-top:68px;padding-bottom:16px;}
+ .hero-label{margin-bottom:12px;}.hero-name{margin-bottom:12px;}
+ .brain-entry-scroll .hero-visual{max-width:65svh;justify-self:center;}
+}
