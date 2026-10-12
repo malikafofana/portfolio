@@ -90,7 +90,7 @@
  const blend=(a,b,value)=>{const t=Math.max(0,Math.min(1,(value-a)/(b-a)));return t*t*(3-2*t);};
  function updateEntrance(){
   if(!entranceBounds)measureEntrance();
-  const range=Math.max(1,entryScene.offsetHeight-height),p=Math.max(0,Math.min(1,scroll/range));
+  const range=Math.max(1,entryScene.offsetHeight-hero.offsetHeight),p=Math.max(0,Math.min(1,scroll/range));
   if(motion.matches){brain.style.transform='';brain.style.opacity='';hero.querySelector('.hero-inner').style.opacity='';canvas.style.opacity='1';document.getElementById('mind-scene').style.opacity='1';window.BrainVolume?.setDepth(brain,0);return;}
   const center=blend(0,.4,p),dive=blend(.2,.95,p),scale=1+dive*1.5;
   const x=(width/2-entranceBounds.x)*center,y=(height/2-entranceBounds.y)*center;
@@ -104,17 +104,20 @@
  }
  function updateExit(){
   const start=exitScene.getBoundingClientRect().top+window.scrollY;
-  const p=Math.max(0,Math.min(1,(scroll-start)/Math.max(1,exitScene.offsetHeight-height)));
-  const retreat=blend(.05,.85,p),depth=1-retreat;
+  const p=Math.max(0,Math.min(1,(scroll-start)/Math.max(1,exitScene.offsetHeight-exitScene.firstElementChild.offsetHeight)));
+  // Reverse the same depth, scale and crossfade used at the entrance.
+  // Complete the retreat before the sticky scene releases into Contact.
+  const passage=1-blend(0,.78,p),depth=blend(.2,.95,passage);
   exitVisual.style.transform=`translate(-50%,-50%) scale(${motion.matches?1:1+depth*1.5})`;
-  exitVisual.style.opacity=String(motion.matches?1:blend(.02,.22,p));
+  exitVisual.style.opacity=String(motion.matches?1:1-blend(.72,1,passage));
   window.BrainVolume?.setDepth(exitVisual,motion.matches?0:depth);
-  exitScene.querySelector('.brain-exit-copy').style.opacity=String(motion.matches?1:blend(.82,1,p));
+  exitScene.querySelector('.brain-exit-copy').style.opacity=String(motion.matches?1:blend(.72,.94,p));
   if(scroll>=start){
-   document.getElementById('mind-scene').style.opacity=String(1-blend(0,.18,p));
-   canvas.style.opacity=String(1-blend(.12,.62,p));
+   document.getElementById('mind-scene').style.opacity=String(blend(.85,1,passage));
+   canvas.style.opacity=String(blend(.38,.9,passage));
    document.getElementById('anatomy-caption').style.opacity=String(1-blend(0,.18,p));
   }else{document.getElementById('anatomy-caption').style.opacity='';}
+
  }
 
  function project(cell,camera,center){
@@ -146,8 +149,11 @@
   const readingOpacity=1-reading*.84;
   ctx.globalAlpha=readingOpacity;
   const exitStart=exitScene.getBoundingClientRect().top+window.scrollY;
-  const exitProgress=Math.max(0,Math.min(1,(scroll-exitStart)/Math.max(1,exitScene.offsetHeight-height)));
-  const camera=scroll<exitStart?-1650+scroll*1.8:-1650+exitStart*1.8-blend(0,1,exitProgress)*2600,center=route(camera+500);
+  const exitProgress=Math.max(0,Math.min(1,(scroll-exitStart)/Math.max(1,exitScene.offsetHeight-exitScene.firstElementChild.offsetHeight)));
+  const exitRange=Math.max(1,exitScene.offsetHeight-exitScene.firstElementChild.offsetHeight);
+  // Keep the direction and velocity continuous as the fiber camera slows down.
+  const exitTravel=exitRange*1.8*(exitProgress-.5*exitProgress*exitProgress);
+  const camera=scroll<exitStart?-1650+scroll*1.8:-1650+exitStart*1.8+exitTravel,center=route(camera+500);
   const projected=cells.map(cell=>project(cell,camera,center));
   ctx.lineWidth=.65;
   for(let edgeIndex=0;edgeIndex<edges.length;edgeIndex++){
@@ -186,7 +192,7 @@
   const elapsed=previousFrame?Math.min(64,time-previousFrame):16.67;previousFrame=time;
   scroll=paused?target:scroll+(target-scroll)*(1-Math.exp(-elapsed/75));if(Math.abs(scroll-target)<.1)scroll=target;
   const exitStart=exitScene.getBoundingClientRect().top+window.scrollY;
-  const inTransition=scroll<entryScene.offsetHeight-height||(scroll>=exitStart&&scroll<=exitStart+exitScene.offsetHeight-height);
+  const inTransition=scroll<entryScene.offsetHeight-hero.offsetHeight||(scroll>=exitStart&&scroll<=exitStart+exitScene.offsetHeight-exitScene.firstElementChild.offsetHeight);
   const interval=inTransition?0:(width<700?28:16);if(time-last>=interval){draw(time);last=time;}
   if(!paused||Math.abs(scroll-target)>.1)raf=requestAnimationFrame(frame);
  }

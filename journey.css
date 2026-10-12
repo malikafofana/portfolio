@@ -205,3 +205,8 @@ html.brain-intro-playing .hero-visual .brain-wrap{visibility:hidden;}
 .role-cursor{display:inline-block;height:1em;border-left:2px solid currentColor;margin-left:3px;vertical-align:-.1em;animation:role-caret 1s steps(1) infinite;}
 @keyframes role-caret{50%{opacity:0;}}
 @media(prefers-reduced-motion:reduce){.role-cursor{display:none;}}
+
+/* Keep the complete exit brain in view on small portrait and landscape screens. */
+.brain-exit-visual{width:min(540px,72vw,62svh);min-width:0;}
+.brain-exit-copy{bottom:8%;font-size:clamp(19px,3vw,34px);padding-inline:3vw;}
+@media(max-height:500px){.brain-exit-visual{top:40%;width:min(480px,58vw,58svh);}.brain-exit-copy{bottom:6%;font-size:clamp(17px,2.5vw,24px);}}
