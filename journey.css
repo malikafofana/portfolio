@@ -1,0 +1,173 @@
+:root{--journey-light:0;--world-progress:0;}
+body{background:#10132a;}
+#brain-world{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;}
+body::after{content:'';position:fixed;inset:0;z-index:1;pointer-events:none;background:radial-gradient(ellipse at center,transparent 35%,rgba(16,19,42,.3));}
+.hero{min-height:110svh;align-items:center;}
+.hero-inner{max-width:620px;}
+.hero-label{flex-direction:row;gap:14px;letter-spacing:.15em;font-size:10px;}
+.hero-label i{display:none;}
+.hero-visual{width:clamp(300px,44vw,660px);right:3vw;opacity:1;pointer-events:none;will-change:opacity,transform;}
+.hero .brain-shape{stroke-width:2;fill:rgba(77,122,255,.015);}
+.hero .brain-links line{stroke-width:1.2;}
+.hero-name .role{font-size:clamp(15px,1.7vw,24px);letter-spacing:.05em;}
+.journey-overline{color:var(--blue-glow);font-family:var(--font-display);font-size:10px;letter-spacing:.22em;text-transform:uppercase;margin-bottom:30px;}
+.journey-invitation{display:inline-flex;gap:24px;align-items:center;margin-top:30px;padding:13px 20px;border:1px solid rgba(124,157,255,.5);border-radius:30px;font-size:12px;background:rgba(16,19,42,.55);backdrop-filter:blur(8px);}
+.journey-invitation b{color:var(--red-glow);font-weight:400;font-size:20px;}
+.journey-hint{font-size:10px;color:var(--muted);margin-top:12px;}
+.journey-skip{position:fixed;top:-100px;left:15px;z-index:100;padding:10px 18px;background:var(--ink);color:var(--bg);border-radius:8px;}
+.journey-skip:focus{top:15px;}
+.journey-hud{position:fixed;left:26px;bottom:25px;z-index:45;display:flex;align-items:center;gap:14px;max-width:calc(100vw - 40px);padding:12px 16px;border:1px solid rgba(124,157,255,.2);border-radius:8px;background:rgba(16,19,42,.76);backdrop-filter:blur(12px);font-size:10px;letter-spacing:.04em;}
+.journey-hud i{width:5px;height:5px;background:var(--red-glow);border-radius:50%;box-shadow:0 0 12px var(--red);flex:none;}
+.journey-hud .journey-label{color:var(--muted);font-size:9px;display:block;}
+.journey-hud strong{font-weight:400;color:var(--ink);display:block;margin-top:2px;}
+.journey-hud button{color:var(--blue-glow);font:10px var(--font-display);background:transparent;border:0;cursor:pointer;margin-left:12px;white-space:nowrap;}
+.journey-hud button:focus-visible,.journey-invitation:focus-visible{outline:2px solid var(--red-glow);outline-offset:4px;}
+.journey-progress{position:fixed;top:0;left:0;height:2px;width:calc(var(--world-progress) * 100%);background:linear-gradient(90deg,var(--blue),var(--red));z-index:80;}
+.manifesto,.skills-section,.timeline-section,.certs-section,.contact-section{position:relative;z-index:3;}
+.manifesto{margin-top:12svh;margin-bottom:10svh;}
+.manifesto-copy{border:1px solid rgba(124,157,255,.15);background:rgba(16,19,42,.82);backdrop-filter:blur(12px);border-radius:14px;padding:36px;}
+.value-card,.skill-group{background:rgba(16,19,42,.8);backdrop-filter:blur(10px);}
+.section-head{background:rgba(16,19,42,.6);backdrop-filter:blur(6px);border-radius:15px;padding:22px;}
+.t-card{background:rgba(16,19,42,.86);backdrop-filter:blur(14px);border-color:rgba(124,157,255,.18);transition:border-color .45s,box-shadow .45s,transform .4s;}
+.t-entry{margin-bottom:clamp(70px,16vh,190px);scroll-margin-top:110px;}
+.t-entry.journey-current .t-card{border-color:rgba(124,157,255,.55);box-shadow:0 0 50px rgba(77,122,255,.08),inset 0 0 40px rgba(77,122,255,.025);}
+.t-entry.journey-current .t-dot{box-shadow:0 0 24px rgba(255,74,96,.5);background:var(--red-glow);}
+.t-line{background:rgba(124,157,255,.15);}
+#t-line-progress{box-shadow:0 0 14px rgba(124,157,255,.35);}
+.marquee-wrap{background:rgba(16,19,42,.65);backdrop-filter:blur(5px);}
+.cert-card{background:rgba(16,19,42,.8);}
+.contact-section{background:linear-gradient(180deg,transparent,rgba(16,19,42,.95));padding-bottom:100px;}
+.photo-slot{border-color:rgba(124,157,255,.25);box-shadow:0 0 35px rgba(77,122,255,.08);}
+.journey-divider{height:25svh;position:relative;z-index:2;display:flex;align-items:center;justify-content:center;}
+.journey-divider span{font-family:var(--font-formula);font-style:italic;color:var(--blue-glow);font-size:clamp(17px,2.1vw,23px);background:rgba(16,19,42,.62);padding:10px 20px;border-radius:40px;}
+@media(max-width:980px){.hero{min-height:110svh;justify-content:flex-start;gap:20px;padding-top:120px;}.hero-inner{max-width:100%;}.hero-visual{width:clamp(230px,60vw,410px);right:auto;order:-1;margin:0 auto;}.hero-name .script{font-size:clamp(55px,9vw,78px);}.hero-label{flex-wrap:wrap;}.manifesto-copy{padding:24px;}.journey-hud{left:15px;bottom:15px;}}
+@media(max-width:560px){.hero{padding-top:100px;gap:10px;}.hero-visual{width:62vw;opacity:1;}.journey-overline{margin-bottom:18px;}.hero-label{margin-bottom:22px;font-size:8px;}.hero-name{margin-bottom:16px;}.hero-tagline{font-size:17px;}.journey-invitation{margin-top:22px;}.manifesto-copy{padding:20px;}.journey-hud{font-size:9px;padding:10px 12px;}.journey-divider{height:18svh;}.t-entry{margin-bottom:100px;}}
+@media(prefers-reduced-motion:reduce){.hero-visual{transform:none!important;opacity:1!important;}.journey-divider{height:10svh;}}
+/* Brain regions are part of the story, not a floating dashboard. */
+.brain-region{position:relative;max-width:650px;margin:0 auto 42px;padding:18px 0 18px 20px;border-left:1px solid rgba(124,157,255,.45);text-align:left;}
+.brain-region-heading{display:flex;align-items:center;gap:10px;}
+.brain-region-heading i{width:5px;height:5px;background:var(--red-glow);box-shadow:0 0 12px var(--red);border-radius:50%;flex:none;}
+.brain-region-name{font-size:15px;font-weight:500;letter-spacing:.02em;color:var(--blue-glow);}
+.brain-region-function{font-size:12px;line-height:1.7;color:var(--muted);margin-top:8px;}
+.brain-region-echo{font-family:var(--font-formula);font-style:italic;font-size:16px;line-height:1.5;color:var(--ink);margin-top:10px;}
+.t-card .brain-region{margin:0 0 22px;max-width:none;padding:0 0 15px;border-left:0;border-bottom:1px solid rgba(124,157,255,.15);}
+.t-card .brain-region-name{font-size:12px;}
+.t-card .brain-region-function{font-size:10px;}
+.t-card .brain-region-echo{font-size:14px;}
+.contact-section .brain-region{padding-right:20px;}
+.brain-source-note{position:relative;z-index:3;max-width:850px;margin:0 auto;padding:0 25px 30px;font-size:10px;line-height:1.7;color:var(--muted-dim);text-align:center;}
+.brain-source-note a{color:var(--blue-glow);margin-left:8px;}
+.journey-motion-control{background:transparent;border:1px solid var(--line);border-radius:50%;height:30px;width:30px;display:grid;place-items:center;color:var(--muted);padding:6px;cursor:pointer;}
+.journey-motion-control svg{width:16px;height:16px;stroke:currentColor;fill:none;stroke-width:1.8;}
+.journey-motion-control:focus-visible{outline:2px solid var(--red-glow);outline-offset:4px;}
+@media(max-width:560px){.brain-region{margin:0 20px 25px;}.t-card .brain-region{margin:0 0 20px;}.brain-region-echo{font-size:15px;}.journey-motion-control{width:26px;height:26px;}}
+/* One recognizable anatomical backdrop, traversed progressively. */
+.brain-anatomy{position:fixed;inset:0;display:grid;place-items:center;z-index:0;pointer-events:none;overflow:hidden;perspective:1200px;}
+.brain-anatomy svg{width:clamp(760px,115vw,1750px);height:auto;max-width:none;transform:translate(var(--anatomy-x,0px),var(--anatomy-y,0px)) scale(var(--anatomy-zoom,1));transform-origin:center;opacity:.67;transition:opacity .8s;will-change:transform;}
+.cortex-shell{fill:url(#cortex-surface);stroke:url(#cortex-edge);stroke-width:1.5;}
+.cortex-outline{fill:none;stroke:url(#cortex-edge);stroke-width:1;opacity:.7;}
+.cortex-folds{fill:none;stroke:#7c9dff;stroke-width:2.3;stroke-linecap:round;opacity:.24;}
+.cortex-folds path:nth-child(even){stroke:#ff8a98;opacity:.7;}
+.cortex-stem{fill:#1b1f3c;stroke:#7c9dff;stroke-width:1.4;opacity:.7;}
+.anatomy-region>path{fill:#4d7aff;fill-opacity:.025;stroke:#7c9dff;stroke-opacity:.16;stroke-width:1;transition:fill-opacity 1s,stroke-opacity 1s,fill 1s;}
+.anatomy-region.is-active>path{fill-opacity:.24;stroke-opacity:.8;stroke-width:1.8;}
+.anatomy-region:nth-of-type(even).is-active>path{fill:#ff4a60;stroke:#ff8a98;}
+.anatomy-internal{opacity:0;transition:opacity .8s;}
+.anatomy-internal.is-active{opacity:1;}
+.anatomy-internal.is-active>path{fill-opacity:.5;}
+.cerebellum-folds{fill:none;stroke:#7c9dff;stroke-width:1.2;opacity:.4;}
+#brain-world{opacity:.28;}
+.anatomy-caption{position:fixed;bottom:24px;right:30px;z-index:2;pointer-events:none;max-width:260px;text-align:right;text-shadow:0 2px 12px #10132a,0 0 25px #10132a;}
+#anatomy-region-title{font:500 15px var(--font-display);color:var(--blue-glow);letter-spacing:.04em;}
+#anatomy-region-function{color:var(--muted);font-size:10px;line-height:1.6;margin-top:5px;}
+.hero-visual{opacity:.45;}
+@media(max-width:680px){.brain-anatomy svg{width:1000px;opacity:.5;}.anatomy-caption{right:18px;bottom:18px;max-width:195px;}#anatomy-region-title{font-size:12px;}#anatomy-region-function{font-size:9px;}.hero-visual{opacity:.7;}}
+@media(prefers-reduced-motion:reduce){.brain-anatomy svg{transform:none;}}
+/* The film begins in the original fiber network. */
+#brain-world{opacity:1;}
+.brain-anatomy{display:none;}
+.hero-visual{opacity:1;}
+.brain-intro{position:fixed;inset:0;z-index:90;pointer-events:none;background:rgba(16,19,42,.98);transition:background .85s;}
+.brain-intro.is-docking{background:rgba(16,19,42,0);}
+.brain-intro-visual{position:absolute;left:50%;top:50%;width:min(60vw,480px);aspect-ratio:1;transform:translate(-50%,-50%);}
+.brain-intro-visual svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 0 30px rgba(124,157,255,.18));}
+.brain-intro .brain-shape{fill:none;stroke-width:3;opacity:1;animation:none!important;}
+.brain-intro .brain-links line{animation:none!important;opacity:.65;stroke-width:1.4;}
+.brain-intro .brain-nodes circle{animation:none!important;fill:#f7f8fb;}
+html.brain-intro-playing .hero-visual .brain-wrap{visibility:hidden;}
+@media(max-width:980px){.hero-visual{align-self:flex-end;margin-left:auto;margin-right:0;}.brain-intro-visual{width:min(74vw,420px);}}
+@media(prefers-reduced-motion:reduce){.brain-intro{display:none;}}
+/* Scrolling enters the same brain assembled in the opening. */
+.brain-entry-scroll{position:relative;height:230svh;z-index:2;}
+.brain-entry-scroll .hero{position:sticky;top:0;height:100svh;min-height:100svh;overflow:hidden;}
+.brain-entry-scroll .hero-visual{transform-origin:center;will-change:transform,opacity;}
+.brain-entry-scroll .hero-inner{will-change:opacity;}
+.brain-intro{overflow:hidden;}
+@media(max-width:980px){.brain-entry-scroll .hero{padding-top:100px;padding-bottom:30px;}.brain-entry-scroll .hero-visual{width:clamp(220px,52vw,380px);}}
+@media(prefers-reduced-motion:reduce){.brain-entry-scroll{height:auto;}.brain-entry-scroll .hero{position:relative;height:auto;}.brain-entry-scroll .hero-inner{opacity:1!important;pointer-events:auto!important;}}
+.brain-exit-scroll{position:relative;height:200svh;z-index:2;}
+.brain-exit-scene{position:sticky;top:0;height:100svh;overflow:hidden;}
+.brain-exit-visual{position:absolute;left:50%;top:45%;width:clamp(260px,45vw,540px);aspect-ratio:1;transform:translate(-50%,-50%) scale(12);transform-origin:center;opacity:0;will-change:transform,opacity;}
+.brain-exit-visual .brain-shape{stroke:url(#exitBrainGrad);stroke-width:3;fill:none;}
+.brain-exit-visual .brain-links line{stroke:url(#exitBrainGrad);}
+.brain-exit-visual svg{width:100%;height:100%;overflow:visible;}
+.brain-exit-copy{position:absolute;bottom:13%;left:20px;right:20px;text-align:center;font-family:var(--font-formula);font-style:italic;font-size:clamp(22px,3vw,34px);color:var(--ink);opacity:0;}
+@media(prefers-reduced-motion:reduce){.brain-exit-scroll{height:auto;}.brain-exit-scene{position:relative;height:70svh;}.brain-exit-visual{transform:translate(-50%,-50%) scale(1)!important;opacity:1!important;}.brain-exit-copy{opacity:1!important;}}
+/* Thoughts occupy the depth of the neural world, behind the narrative. */
+.mind-scene{position:fixed;inset:0;z-index:1;pointer-events:none;opacity:0;overflow:hidden;}
+.mind-item{position:absolute;color:var(--blue-glow);opacity:.29;max-width:280px;animation:thought-drift 12s ease-in-out infinite;transform:perspective(900px) rotateY(-10deg);text-shadow:0 0 15px rgba(77,122,255,.15);}
+.mind-slot-0{left:4%;top:18%;}
+.mind-slot-1{right:5%;top:28%;animation-delay:-3s;}
+.mind-slot-2{left:7%;bottom:17%;animation-delay:-6s;color:var(--red-glow);}
+.mind-slot-3{right:6%;bottom:22%;animation-delay:-8s;}
+.mind-code pre{font:clamp(9px,1.1vw,14px)/1.8 monospace;white-space:pre-wrap;}
+.mind-formula pre{font:italic clamp(17px,2vw,26px)/1.6 var(--font-formula);white-space:pre-wrap;}
+.mind-quote{max-width:270px;font:italic 19px/1.55 var(--font-formula);}
+.mind-quote small{display:block;font:9px/1.5 var(--font-display);letter-spacing:.04em;margin-top:9px;}
+.mind-book{transform:perspective(900px) rotateY(20deg) rotate(-6deg);}
+.mind-book-cover{position:relative;width:145px;min-height:195px;display:flex;flex-direction:column;gap:20px;justify-content:space-between;padding:18px 17px 17px 22px;background:linear-gradient(110deg,#152039,#1b1f3c);border:1px solid currentColor;border-left-width:6px;box-shadow:9px 8px 0 rgba(170,176,196,.1);}
+.mind-book-cover::after{content:'';position:absolute;inset:9px;border:1px solid rgba(124,157,255,.2);pointer-events:none;}
+.mind-book-author{font:10px/1.4 var(--font-display);letter-spacing:.05em;}
+.mind-book-cover strong{font:400 18px/1.2 var(--font-formula);color:var(--ink);}
+.mind-book-cover small{font:10px var(--font-display);}
+@keyframes thought-drift{0%,100%{translate:0 0;}50%{translate:8px -14px;}}
+@media(max-width:680px){.mind-item{opacity:.2;max-width:165px;}.mind-slot-0{left:-22px;top:14%;}.mind-slot-1{right:-15px;top:32%;}.mind-slot-2{left:2%;bottom:16%;}.mind-slot-3{right:-8px;bottom:25%;}.mind-book-cover{width:108px;min-height:150px;padding:13px 12px 13px 16px;gap:12px;}.mind-book-cover strong{font-size:14px;}.mind-book-author{font-size:8px;}.mind-quote{font-size:14px;}.mind-code pre{font-size:8px;}.mind-formula pre{font-size:17px;}}
+@media(prefers-reduced-motion:reduce){.mind-item{animation:none;transform:none;}}
+/* Four disjoint cells contain the entire footprint of each moving reference. */
+.mind-scene{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:6vh 6vw;padding:10vh 3vw 8vh;box-sizing:border-box;}
+.mind-lane{position:relative;min-width:0;min-height:0;overflow:hidden;contain:paint;}
+.mind-item{position:absolute;left:0;right:auto;top:0;bottom:auto;width:min(180px,100%);max-width:180px;opacity:.29;animation:mind-contained 27s ease-in-out infinite;will-change:transform;translate:none;transform-origin:top left;overflow-wrap:anywhere;}
+.mind-slot-0{animation-delay:-4s;}
+.mind-slot-1{animation-delay:-13s;animation-duration:32s;animation-direction:reverse;}
+.mind-slot-2{animation-delay:-9s;animation-duration:29s;color:var(--red-glow);}
+.mind-slot-3{animation-delay:-21s;animation-duration:35s;animation-direction:reverse;}
+.mind-fact{font-family:var(--font-display);}
+.mind-history-year{display:block;font-size:36px;font-weight:400;line-height:1.1;margin-bottom:10px;}
+.mind-fact p{font-size:11px;line-height:1.6;}
+.mind-fact small,.mind-person small{display:block;font-size:9px;line-height:1.6;margin-top:8px;}
+.mind-person p{font:400 21px/1.3 var(--font-formula);}
+.mind-book-cover{width:100%;max-width:145px;box-sizing:border-box;}
+@keyframes mind-contained{
+ 0%,100%{transform:translate(0,calc(var(--travel-y,0px)*.2)) scale(var(--fit,1));}
+ 35%{transform:translate(calc(var(--travel-x,0px)*.7),var(--travel-y,0px)) scale(var(--fit,1));}
+ 70%{transform:translate(var(--travel-x,0px),0) scale(var(--fit,1));}
+}
+@media(max-width:680px){.mind-item{width:min(120px,100%);max-width:120px;opacity:.24;}.mind-history-year{font-size:28px;}.mind-fact p{font-size:10px;}.mind-person p{font-size:17px;}}
+@media(prefers-reduced-motion:reduce){.mind-item{animation:none!important;transform:scale(var(--fit,1))!important;opacity:.25;}}
+
+/* Stable composited scenery: no regenerated image mask while scrolling. */
+.mind-scene{height:100lvh;bottom:auto;gap:6svh 6vw;padding:10svh 3vw 8svh;}
+.mind-lane{opacity:1;transition:opacity .18s ease;}
+.mind-scene.is-changing .mind-lane{opacity:0;}
+#brain-world{height:100lvh;}
+.manifesto-copy,.value-card,.skill-group,.section-head,.t-card,.cert-card{background:#10132a;backdrop-filter:none;}
+.manifesto-values-title,.journey-divider span{background:#10132a;}
+@media(prefers-reduced-motion:reduce){.mind-lane{transition:none;}}
+
+/* Blue and crimson cortical volume shared throughout the journey. */
+.has-brain-volume>.brain-svg{display:none;}
+.brain-volume{display:block;width:100%;height:100%;aspect-ratio:1;}
+.brain-wrap.has-brain-volume{animation:none;filter:none;}
+.brain-intro-visual{width:min(78vw,580px);}
+.brain-exit-visual .brain-volume{width:100%;height:100%;}
+@media(max-width:680px){.brain-intro-visual{width:min(94vw,460px);}.brain-entry-scroll .hero-visual{width:clamp(250px,68vw,380px);}}

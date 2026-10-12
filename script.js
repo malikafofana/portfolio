@@ -266,7 +266,7 @@ const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)
 
 /* ===================== HERO PARALLAX (brain drifts as you scroll past) ===================== */
 const heroVisualEl = document.querySelector('.hero-visual');
-if (heroVisualEl && !prefersReducedMotion){
+if (heroVisualEl && !prefersReducedMotion && !document.getElementById('brain-entry-scroll')){
   let parallaxRaf = null;
   const updateParallax = () => {
     const y = Math.min(window.scrollY, window.innerHeight * 1.2);
@@ -279,117 +279,6 @@ if (heroVisualEl && !prefersReducedMotion){
     parallaxRaf = requestAnimationFrame(updateParallax);
   }, { passive: true });
 }
-
-/* ===================== PARTICLE NEURAL CANVAS ===================== */
-const canvas = document.getElementById('bg-canvas');
-const ctx = canvas.getContext('2d');
-let W, H, DPR;
-let particles = [];
-let mouse = { x: null, y: null, active: false };
-let scrollFade = 1;
-
-function resize(){
-  DPR = Math.min(window.devicePixelRatio || 1, 2);
-  W = window.innerWidth;
-  H = window.innerHeight;
-  canvas.width = W * DPR;
-  canvas.height = H * DPR;
-  canvas.style.width = W + 'px';
-  canvas.style.height = H + 'px';
-  ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
-  initParticles();
-}
-
-function initParticles(){
-  const density = prefersReducedMotion ? 0 : Math.min(90, Math.floor((W * H) / 16000));
-  particles = [];
-  for (let i = 0; i < density; i++){
-    particles.push({
-      x: Math.random() * W,
-      y: Math.random() * H,
-      vx: (Math.random() - 0.5) * 0.18,
-      vy: (Math.random() - 0.5) * 0.18,
-      r: Math.random() * 1.4 + 0.6
-    });
-  }
-}
-
-function colorForX(x){
-  /* blue on the left, red on the right, blended in the middle */
-  const t = Math.min(Math.max(x / W, 0), 1);
-  const r = Math.round(61 + (255 - 61) * t);
-  const g = Math.round(107 + (59 - 107) * t);
-  const b = Math.round(255 + (82 - 255) * t);
-  return `${r},${g},${b}`;
-}
-
-function step(){
-  ctx.clearRect(0, 0, W, H);
-
-  const heroH = window.innerHeight * 1.05;
-  const fade = Math.max(0, 1 - (window.scrollY / heroH));
-  if (fade <= 0.01){
-    requestAnimationFrame(step);
-    return;
-  }
-
-  for (let i = 0; i < particles.length; i++){
-    const p = particles[i];
-    p.x += p.vx;
-    p.y += p.vy;
-
-    if (mouse.active){
-      const dx = p.x - mouse.x, dy = p.y - mouse.y;
-      const dist = Math.sqrt(dx*dx + dy*dy);
-      if (dist < 140){
-        const force = (140 - dist) / 140 * 0.55;
-        p.x += (dx / (dist || 1)) * force;
-        p.y += (dy / (dist || 1)) * force;
-      }
-    }
-
-    if (p.x < 0) p.x = W; if (p.x > W) p.x = 0;
-    if (p.y < 0) p.y = H; if (p.y > H) p.y = 0;
-  }
-
-  /* connecting lines */
-  for (let i = 0; i < particles.length; i++){
-    for (let j = i + 1; j < particles.length; j++){
-      const a = particles[i], b = particles[j];
-      const dx = a.x - b.x, dy = a.y - b.y;
-      const dist = Math.sqrt(dx*dx + dy*dy);
-      if (dist < 130){
-        const alpha = (1 - dist / 130) * 0.35 * fade;
-        ctx.strokeStyle = `rgba(${colorForX((a.x+b.x)/2)},${alpha})`;
-        ctx.lineWidth = 0.6;
-        ctx.beginPath();
-        ctx.moveTo(a.x, a.y);
-        ctx.lineTo(b.x, b.y);
-        ctx.stroke();
-      }
-    }
-  }
-
-  /* particle dots */
-  for (let i = 0; i < particles.length; i++){
-    const p = particles[i];
-    ctx.beginPath();
-    ctx.fillStyle = `rgba(${colorForX(p.x)},${0.85 * fade})`;
-    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-    ctx.fill();
-  }
-
-  requestAnimationFrame(step);
-}
-
-window.addEventListener('mousemove', (e) => {
-  mouse.x = e.clientX; mouse.y = e.clientY; mouse.active = true;
-});
-window.addEventListener('mouseleave', () => { mouse.active = false; });
-window.addEventListener('resize', resize);
-
-resize();
-requestAnimationFrame(step);
 
 /* ===================== DELIGHT: TILT, MAGNETIC, RIPPLE ===================== */
 const finePointer = window.matchMedia('(hover: hover) and (pointer: fine)').matches;
@@ -438,3 +327,4 @@ document.querySelectorAll('.nav-cta, .browser-mock, .contact-links a').forEach(e
   el.classList.add('ripple-wrap');
   el.addEventListener('click', (e) => addRipple(e, el));
 });
+

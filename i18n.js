@@ -4,7 +4,7 @@ const I18N = {
     nav: { histoire: "Histoire", parcours: "Parcours", competences: "Compétences", certifications: "Certifications", contact: "Contact" },
     hero: {
       label0: "Curiosity", label1: "Learn", label2: "Build", label3: "Impact",
-      role: "IA &amp; Data Science",
+      role: "Ingénieure IA &amp; Data · Software Developer",
       tagline: "Comprendre <em class=\"c-blue\">l'esprit</em>, révéler le <em class=\"c-red\">potentiel,</em><br>bâtir un avenir <em class=\"c-blue\">meilleur</em>."
     },
     photo: { hero: "Votre photo ici", contact: "Votre photo ici" },
@@ -93,7 +93,7 @@ const I18N = {
     nav: { histoire: "Story", parcours: "Journey", competences: "Skills", certifications: "Certifications", contact: "Contact" },
     hero: {
       label0: "Curiosity", label1: "Learn", label2: "Build", label3: "Impact",
-      role: "AI &amp; Data Science",
+      role: "AI &amp; Data Engineer · Software Developer",
       tagline: "Understanding <em class=\"c-blue\">the mind</em>, revealing <em class=\"c-red\">potential,</em><br>building a <em class=\"c-blue\">better</em> future."
     },
     photo: { hero: "Add your photo here", contact: "Add your photo here" },
@@ -196,6 +196,7 @@ function applyLanguage(lang){
     btn.classList.toggle('active', active);
     btn.setAttribute('aria-pressed', active ? 'true' : 'false');
   });
+  document.dispatchEvent(new CustomEvent('portfolio-language', { detail: lang }));
   try { localStorage.setItem('mf-lang', lang); } catch(e){ /* ignore */ }
 }
 
@@ -211,3 +212,4 @@ function initLanguage(){
 }
 
 document.addEventListener('DOMContentLoaded', initLanguage);
+
