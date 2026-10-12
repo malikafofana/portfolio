@@ -191,7 +191,7 @@ if (navToggle && navDropdownEl){
     if (e.key === 'Escape' && nav.classList.contains('nav-open')) closeNav();
   });
   window.addEventListener('resize', () => {
-    if (window.innerWidth > 680) closeNav();
+    if (window.innerWidth > 1100) closeNav();
   });
 }
 

@@ -85,7 +85,7 @@
 
  function measureEntrance(){
   const rect=brain.getBoundingClientRect();
-  entranceBounds={x:rect.left+rect.width/2,y:rect.top+rect.height/2-hero.getBoundingClientRect().top,width:rect.width};
+  entranceBounds={x:rect.left+rect.width/2,y:rect.top+rect.height/2-hero.getBoundingClientRect().top,width:rect.width,transform:getComputedStyle(brain).transform};
  }
  const blend=(a,b,value)=>{const t=Math.max(0,Math.min(1,(value-a)/(b-a)));return t*t*(3-2*t);};
  function updateEntrance(){
@@ -94,7 +94,8 @@
   if(motion.matches){brain.style.transform='';brain.style.opacity='';hero.querySelector('.hero-inner').style.opacity='';canvas.style.opacity='1';document.getElementById('mind-scene').style.opacity='1';window.BrainVolume?.setDepth(brain,0);return;}
   const center=blend(0,.4,p),dive=blend(.2,.95,p),scale=1+dive*1.5;
   const x=(width/2-entranceBounds.x)*center,y=(height/2-entranceBounds.y)*center;
-  brain.style.transform=`translateY(${width>980?-50:0}%) translate(${x}px,${y}px) scale(${scale})`;
+  const base=entranceBounds.transform==='none'?'':entranceBounds.transform;
+  brain.style.transform=`${base} translate(${x}px,${y}px) scale(${scale})`; 
   brain.style.opacity=String(1-blend(.72,1,p));
   window.BrainVolume?.setDepth(brain,dive);
   const copy=hero.querySelector('.hero-inner');copy.style.opacity=String(1-blend(0,.24,p));copy.style.pointerEvents=p>.24?'none':'';
