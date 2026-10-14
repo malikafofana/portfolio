@@ -221,3 +221,8 @@ html.brain-intro-playing .hero-visual .brain-wrap{visibility:hidden;}
  .journey-overline{margin-bottom:10px;}
  .hero-label{margin-bottom:12px;}
 }
+
+/* Use the current brain from first paint, including while animation assets load. */
+.brain-loading-image{display:block;width:100%;height:100%;object-fit:contain;aspect-ratio:1;}
+.has-brain-volume>.brain-loading-image{display:none;}
+.brain-wrap:not(.has-brain-volume)>.brain-volume,.brain-exit-visual:not(.has-brain-volume)>.brain-volume{position:absolute;inset:0;visibility:hidden;}

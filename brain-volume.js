@@ -111,12 +111,13 @@
    const assembly=assemble&&!reduced.matches?Math.min(1,(now-start)/2200):1;
    const depth=reduced.matches?0:(canvas.brainDepth||0);
    if(assembly>=1&&depth>0)paintPassage(ctx,now,depth);else paint(ctx,reduced.matches?0:now,assembly);
+   canvas.parentElement?.classList.add('has-brain-volume');
    if(assembly===1&&!done){done=true;onAssembled();}
    if(reduced.matches){cancelAnimationFrame(frame);frame=0;}
   }
   const restart=()=>{if(loaded&&!frame&&!stopped&&visible&&!document.hidden)frame=requestAnimationFrame(draw);};reduced.addEventListener('change',restart);
   const visibility=()=>{if(document.hidden){cancelAnimationFrame(frame);frame=0;}else restart();};document.addEventListener('visibilitychange',visibility);
-  ready.then(()=>{if(stopped)return;prepare();loaded=true;start=performance.now();canvas.parentElement?.classList.add('has-brain-volume');restart();}).catch(()=>{canvas.remove();onAssembled();});
+  ready.then(()=>{if(stopped)return;prepare();loaded=true;start=performance.now();restart();}).catch(()=>{canvas.remove();onAssembled();});
   return()=>{stopped=true;cancelAnimationFrame(frame);observer?.disconnect();reduced.removeEventListener('change',restart);document.removeEventListener('visibilitychange',visibility);};
  }
  window.BrainVolume={mount,setDepth(host,value){const canvas=host.querySelector('.brain-volume');if(canvas)canvas.brainDepth=clamp(value);}};
